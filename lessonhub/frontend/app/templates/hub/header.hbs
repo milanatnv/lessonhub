@@ -1,0 +1,41 @@
+<div class="container-fluid no-pad">
+  <div class="row">
+
+    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+      {{#if isDraftMode}}
+      {{view "editable-text" content=model.title
+      class="lessons-nav"
+      tagName="ul"
+      templateName="editable-text/header-title"}}
+      {{else}}
+      {{view "lesson-menu" tagName="ul" class="lessons-nav"}}
+      {{/if}}
+    </div>
+
+    <div class="col-lg-8 col-md-6 col-xs-12 hidden-sm">
+      {{view "editable-text" content=model.description class="lesson-descr"
+      tagName="div" templateName="editable-text/header-description"}}
+    </div>
+
+
+    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 pull-right no-pad">
+      <!-- Controls -->
+      <ul class="controls hidden-xs pull-right"
+        id="hub-sections-next-prev-controls">
+        <li>
+          <a href="#" class="left" {{action "previousSkill"}}>
+            <span class="icon-arrow-left"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="right" {{action "nextSkill"}}>
+            <span class="icon-arrow-right"></span>
+          </a>
+        </li>
+      </ul>
+      <!-- /Controls -->
+    </div>
+
+
+  </div>
+</div>

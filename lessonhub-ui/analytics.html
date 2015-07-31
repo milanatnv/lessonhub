@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <title>Analytics</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google font: Open Sans -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="css/vendor/animate.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/datepicker.css" />
+    <link rel="stylesheet" href="css/analytics.css" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+  <body id="analytics-page">
+
+
+    <!-- MAIN WRAPPER. REQUIRED FOR STICKY FOOTER -->
+    <div class="main-wrapper">
+
+
+       <!-- FULL TOP FILTER BAR -->
+      <div class="analytics-bar">
+        <div class="container-fluid no-pad">
+          <div class="row">
+
+            <!-- SEARCH BAR -->
+            <div class="col-xs-6 col-sm-5 col-md-6 col-lg-6">
+              <ul class="search-section">
+                <li class="search-icon"></li>
+                <li class="divider"></li>
+                <li> <input class="search-input" type="text" placeholder="Search"></li>
+              </ul>
+            </div>
+            <!-- /SEARCH BAR -->
+
+            <!-- RIGHT HEADER SECTION -->
+            <div class="col-xs-6 col-sm-7 col-md-6 col-lg-6">
+              <div class= "datepicker-segment">
+
+                <!-- DATEPICKER -->
+                <div class="calendar-datepicker">
+                  <div class="datepicker-box" id="date-start" data-date-format="mm-dd-yyyy" data-date="02-15-2015">
+                    <div class="datepicker-date">     
+                      <a href="#" class="calendar-icon"></a>
+                      <p id="date-start-display">02-15-2015</p>
+                    </div>
+                  </div>
+                  <div class="icon-arrow-right arrow-block">
+                  </div>
+                  <div class="calendar-datepicker">
+                    <div class="datepicker-box" id="date-end" data-date-format="mm-dd-yyyy" data-date="02-20-2015">
+                      <div class="datepicker-date">
+                        <a href="#" class="calendar-icon"></a>
+                        <p id="date-end-display">02-20-2015</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /DATEPICKER -->
+
+                <!-- DROPDOWN FILTER -->
+                <div class="dropdown outlined-dropdown hidden-xs">
+                  <button class="btn btn-default dropdown-toggle outlined-button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"><span class="dropdown-text">Past Month</span>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu outlined-dropdown-section" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Past Week</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Past Month</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Past Year</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custom Range</a></li>
+                  </ul>
+                </div>
+                <!-- /DROPDOWN FILTER -->
+
+                <!-- FILTER BUTTON -->
+                <button class="btn outlined-button filter-button" id="filter-button" type="button" data-toggle="collapse" data-target="#extrafilters" aria-expanded="false" aria-controls="collapseExample">Filter
+                </button>
+                <!-- /FILTER BUTTON -->
+
+                
+
+                <!-- EXPORT BUTTON -->
+                <ul class="export-section hidden-md hidden-sm hidden-xs">
+                  <li class="divider"></li>
+                  <li class="csv-icon"></li>
+                </ul>
+                <!-- /EXPORT BUTTON -->
+
+              </div>
+            </div>
+            <!-- /RIGHT HEADER SECTION -->
+
+          </div>
+        </div>
+      </div>
+      <!-- /FULL TOP FILTER BAR -->
+
+      <!-- FILTER COLLAPSE SECTION -->
+      <div class="collapse" id="extrafilters">
+        <div class="well well-filter">
+          <div class="filter-section">
+            <div class="container">
+              <div class="row">
+
+                <!-- COURSE CHECKBOXES -->
+                <div class="col-xs-2">
+                  <div class="header-inline header-inline-inverse">
+                    <h2>Courses</h2>
+                  </div>
+                  <div class="card-divider-filter">
+                  </div>
+                  <div class="row">
+                  <div class="tags">
+                    <label class="filter-checkbox-all">
+                        <input type="checkbox" name="courses" id="selectallcourses" checked/><span class="all-checktext">All</span>
+                    </label>
+                    <label class="filter-checkbox course-label"> 
+                          <input class="course-checkbox" type="checkbox" name="states"/><span class="course-name">AcheiveReading</span>
+                    </label>
+                    <label class="filter-checkbox course-label"> 
+                          <input class="course-checkbox" type="checkbox" name="states"/><span class="course-name">AcheiveMath</span>
+                    </label>
+                  </div>
+                </div>
+                </div>
+
+                <!-- STATE CHECKBOXES -->
+                <div class="col-xs-10">
+                  <div class="header-inline header-inline-inverse">
+                    <h2>States</h2>
+                  </div>
+                  <div class="remove-filters">
+                    <button class="outlined-button remove-filters-button">Remove Filters</button>
+                  </div>
+                  <div class="card-divider-filter">
+                  </div>
+                  <div class="row">
+                    <div class="tags">
+                      <label class="filter-checkbox-all">
+                          <input type="checkbox" name="states" id="selectall" checked/><span class="all-checktext">All</span>
+                        </label>
+                      <div class="col-xs-15">
+                        <label class="filter-checkbox-disabled">
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Alabama</span>
+                        </label>
+                        <label class="filter-checkbox-disabled">
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Alaska</span>
+                        </label>
+                        <label class="filter-checkbox-disabled">
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Arizona</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Arkansas</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">California</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Colorado</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Conneciticut</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Delaware</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Florida</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Georgia</span>
+                        </label>
+                      </div>
+                      <div class="col-xs-15">
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Hawaii</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Idaho</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Illinois</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Indiana</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Iowa</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Kansas</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Kentucky</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Louisiana</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Maine</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Maryland</span>
+                        </label>
+                      </div>
+                      <div class="col-xs-15">
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Massachusetts</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Michigan</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Minnesota</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Mississippi</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Missouri</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Montana</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Nebraska</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Nevada</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">New Hampshire</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">New Jersey</span>
+                        </label>
+                      </div>
+                      <div class="col-xs-15">
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">New Mexico</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">New York</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">North Carolina</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">North Dakota</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Ohio</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Oklahoma</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Oregon</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Pennsylvania</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Rhode Island</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">South Carolina</span>
+                        </label>
+                      </div>
+                      <div class="col-xs-15">
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">South Dakota</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Tennessee</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Texas</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Utah</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Vermont</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Virginia</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">Washington</span>
+                        </label>
+                        <label class="filter-checkbox"> 
+                          <input class="state-checkbox" type="checkbox" name="states"/><span class="state-name">West Virginia</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Wisconsin</span>
+                        </label>
+                        <label class="filter-checkbox-disabled"> 
+                          <input class="state-checkbox-disabled" type="checkbox" name="states" disabled/><span class="state-name">Wyoming</span>
+                        </label>
+                      </div>
+                      <span class="dimmed-states">(Dimmed states have no users assigned.)</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- /STATE CHECKBOXES -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /FILTER COLLAPSE SECTION -->
+
+    <!-- FULL BODY CONTENT -->
+    <div class="body-content">
+
+      <!-- ANALYTICS BUTTON SECTION -->
+      <div class="analytics-section">
+        <div class="container">
+          <div class="header-inline">
+            <h2>Analytics</h2><p> / Dashboard</p>
+          </div>
+          <div class="row">
+
+            <!-- INDIVIDUAL ANALYTICS CARD - DASHBOARD -->
+            <div class="col-xs-6 col-sm-3">
+              <a href="analytics.html">
+                <div class="animated analytics-card dashboard-card dashboard-card-active">
+                  <div class="header-segment">
+                    <div class="visits-icon">
+                    </div>
+                    <div class="card-header">DASHBOARD
+                    </div>
+                  </div>
+                  <div class="card-divider">
+                  </div>
+                  <div class="card-data">
+                    <h1>858</h1>
+                    <p>VISITS</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- /INDIVIDUAL ANALYTICS CARD - DASHBOARD -->
+
+            <!-- INDIVIDUAL ANALYTICS CARD - PAGEVIEWS -->
+            <div class="col-xs-6 col-sm-3">
+              <a href="pageviews.html">
+                <div class="animated analytics-card pageviews-card">
+                  <div class="header-segment">
+                    <div class="views-icon">
+                    </div>
+                    <div class="card-header">PAGEVIEWS
+                    </div>
+                  </div>
+                  <div class="card-divider">
+                  </div>
+                  <div class="card-data">
+                    <h1>2900</h1>
+                    <p>PAGES VISITED</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- /INDIVIDUAL ANALYTICS CARD - PAGEVIEWS -->
+
+            <!-- INDIVIDUAL ANALYTICS CARD - USERS -->
+            <div class="col-xs-6 col-sm-3">
+              <a href="users.html">
+                <div class="animated analytics-card users-card">
+                  <div class="header-segment">
+                    <div class="users-icon">
+                    </div>
+                    <div class="card-header">USERS
+                    </div>
+                  </div>
+                  <div class="card-divider">
+                  </div>
+                  <div class="card-data">
+                    <h1>755</h1>
+                    <p>USER SESSIONS</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- /INDIVIDUAL ANALYTICS CARD - USERS -->
+
+            <!-- INDIVIDUAL ANALYTICS CARD - DOWNLOADS -->
+            <div class="col-xs-6 col-sm-3">
+              <a href="downloads.html">
+                <div class="animated analytics-card downloads-card">
+                  <div class="header-segment">
+                    <div class="downloads-icon">
+                    </div>
+                    <div class="card-header">DOWNLOADS
+                    </div>
+                  </div>
+                    <div class="card-divider">
+                    </div>
+                    <div class="card-data">
+                        <h1>207</h1>
+                        <p>DOWNLOADS</p>
+                    </div>
+                </div>
+              </a>
+            </div>
+            <!-- /INDIVIDUAL ANALYTICS CARD - DOWNLOADS -->
+
+          </div>
+        </div>
+      </div>
+      <!-- /ANALYTICS BUTTON SECTION -->
+
+      <!-- GRAPH ANALYTICS SECTION  -->
+      <div class="graph-analytics">
+
+        <!-- FIRST GRAPH CONTENT ROW -->
+        <div class="container visits-margin">
+          <div class="row">
+
+            <!-- VISITS GRAPH -->
+            <div class="col-sm-12 col-md-9">
+              <div class="header-inline">
+                <h2>Visits</h2>
+              </div>
+              <div id="visits-section">
+                <canvas id="visits-line" width="600" height="300"></canvas>
+              </div>
+            </div>
+            <!-- /VISITS GRAPH -->
+
+          <!-- CONTENT GROUPS SECTION -->
+            <div class="col-sm-12 col-md-3">
+              <div class="sidebar-inline">
+                <h2>Content Groups</h2>
+              </div>
+              <div id="content-section">
+                <canvas id="content-group" height="200"></canvas>
+                <div class="pie-legend-dash">
+                  <ul>
+                    <li><span class="blue-legend"></span><span>Lessons</span></li>
+                    <li><span class="green-legend"></span><span>Pre-Assessments</span></li>
+                    <li><span class="yellow-legend"></span><span>Standards Alignments</span></li>
+                    <li></span><span class="red-legend"></span><span>Performance Tasks</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- /CONTENT GROUPS SECTION  -->
+
+          </div>
+        </div>
+        <!-- /FIRST GRAPH CONTENT ROW  -->
+
+        <!-- SECOND GRAPH CONTENT ROW -->
+        <div class="container">
+          <div class="row">
+
+            <!-- AVERAGE DURATION GRAPH -->
+            <div class="col-md-9">
+              <div class="header-inline">
+                <h2>Average Duration</h2>
+              </div>
+              <div id="duration-section">
+                <canvas id="duration-group" width="600" height="300"></canvas>
+              </div>
+            </div>
+            <!-- /AVERAGE DURATION GRAPH -->
+
+            <!-- TOP DOWNLOADS SECTION -->
+            <div class="col-md-3">
+              <div class="sidebar-inline">
+                <h2>Top Downloads</h2>
+              </div>
+              <div class="list-header-divider">
+              </div>
+              <a href="#">
+                <div class="green-link">
+                  <p>View All</p>
+                </div>
+              </a>
+              <div class="top-downloads">
+                <ul>
+                  <li><h2>Lorem ipusum something</h2><p>2250</p></li>
+                  <li></li>
+                </ul>
+                <ul>
+                  <li><h2>Nulla porttitors accumsa</h2><p>1581</p></li>
+                  <li></li>
+                </ul>
+                <ul>
+                  <li><h2>Curabitur aliquet quam</h2><p>1432</p></li>
+                  <li></li>
+                </ul>
+                <ul>
+                  <li><h2>Nulla quis lorem ut</h2><p>1321</p></li>
+                  <li></li>
+                </ul>
+                <ul>
+                  <li><h2>Vestibulum ac diam sit</h2><p>1221</p></li>
+                  <li></li>
+                </ul>
+                <ul>
+                  <li><h2>Ullamcorper sit amet lig</h2><p>1122</p></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /TOP DOWNLOADS SECTION -->
+
+          </div>
+        </div>
+        <!-- /SECOND GRAPH CONTENT ROW -->
+
+      </div>
+      <!-- /GRAPH ANALYTICS SECTION  -->
+
+      <!-- LIST ANALYTICS SECTION -->
+      <div class="list-analytics">
+        <div class="container">
+          <div class="row">
+
+            <!-- LIST CARD LEFT -->
+            <div class="col-md-6">
+              <div class="list-card">
+
+                <!-- LIST CARD LEFT HEADER -->
+                <div class="list-header">
+                  <h2>Top Pages</h2>
+                </div>
+                <div class="list-header-divider">
+                </div>
+                <a href="#">
+                  <div class="green-link">
+                    <p>View All</p>
+                  </div>
+                </a>
+                <!-- /LIST CARD LEFT HEADER -->
+
+                <!-- LIST CARD LEFT TABLE -->
+                <table class="table table-hover list-spacing list-table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th class="non-sorted">TITLE</th>
+                      <th class="non-sorted">PAGEVIEWS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">1.</th>
+                      <td>HUB<br><span class="web-subtext">www.example.com/hub</span></td>
+                      <td>1557</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">2.</th>
+                      <td>Lesson<br><span class="web-subtext">www.example.com/lesson</span></td>
+                      <td>954</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">3.</th>
+                      <td>Standards Alignment<br><span class="web-subtext">www.example.com/standards-alignment</span></td>
+                      <td>589</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">4.</th>
+                      <td>Performance Task<br><span class="web-subtext">www.example.com/performance-task</span></td>
+                      <td>467</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">5.</th>
+                      <td>Pre-Assessment<br><span class="web-subtext">www.example.com/pre-assessment</span></td>
+                      <td>458</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">6.</th>
+                      <td>Evidence of Learning<br><span class="web-subtext">www.example.com/evidence-of-learning</span></td>
+                      <td>321</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">7.</th>
+                      <td>HUB<br><span class="web-subtext">www.example.com/hub</span></td>
+                      <td>211</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">8.</th>
+                      <td>Lesson<br><span class="web-subtext">www.example.com/lesson</span></td>
+                      <td>189</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">9.</th>
+                      <td>Standards Alignment<br><span class="web-subtext">www.example.com/standards-alignment</span></td>
+                      <td>176</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="pageviews1.html">
+                      <th scope="row" class="stats-number">10.</th>
+                      <td>Performance Task<br><span class="web-subtext">www.example.com/performance-task</span></td>
+                      <td>152</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- /LIST CARD LEFT TABLE -->
+
+              </div>
+            </div>
+            <!-- /LIST CARD LEFT -->
+
+            <!-- LIST CARD RIGHT -->
+            <div class="col-md-6">
+              <div class="list-card">
+
+                <!-- LIST CARD RIGHT HEADER -->
+                <div class="list-header">
+                  <h2>Top Users</h2>
+                </div>
+                <div class="list-header-divider">
+                </div>
+                <a href="#">
+                  <div class="green-link">
+                      <p>View All</p>
+                  </div>
+                </a>
+                <!-- /LIST CARD RIGHT HEADER -->
+
+                <!-- LIST CARD RIGHT TABLE -->
+                <table class="table table-hover list-spacing list-table dashboard-user-table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th class="non-sorted stats-header-first">FIRST NAME</th>
+                      <th class="non-sorted stats-header-last">LAST NAME</th>
+                      <th class="non-sorted stats-header-state">STATE</th>
+                      <th class="non-sorted stats-header-pageviews">PAGEVIEWS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">1.</th>
+                      <td>Ashley</td>
+                      <td>Adams</td>
+                      <td>FL</td>
+                      <td>43</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">2.</th>
+                      <td>Henry</td>
+                      <td>Bryant</td>
+                      <td>FL</td>
+                      <td>39</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">3.</th>
+                      <td>Ann</td>
+                      <td>Clark</td>
+                      <td>MI</td>
+                      <td>38</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">4.</th>
+                      <td>Jack</td>
+                      <td>Collins</td>
+                      <td>NE</td>
+                      <td>36</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">5.</th>
+                      <td>Paula</td>
+                      <td>Cooper</td>
+                      <td>OR</td>
+                      <td>34</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">6.</th>
+                      <td>Jerry</td>
+                      <td>Davis</td>
+                      <td>NY</td>
+                      <td>32</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">7.</th>
+                      <td>Wayne</td>
+                      <td>Diaz</td>
+                      <td>TX</td>
+                      <td>31</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">8.</th>
+                      <td>Lois</td>
+                      <td>Flores</td>
+                      <td>FL</td>
+                      <td>28</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">9.</th>
+                      <td>Eugene</td>
+                      <td>Green</td>
+                      <td>TX</td>
+                      <td>28</td>
+                    </tr>
+                    <tr class="clickable-row" data-href="user1.html">
+                      <th scope="row" class="stats-number">10.</th>
+                      <td>Heather</td>
+                      <td>Griffin</td>
+                      <td>TX</td>
+                      <td>27</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- /LIST CARD RIGHT TABLE -->
+
+              </div>
+            </div>
+            <!-- /LIST CARD RIGHT -->
+
+          </div>
+        </div>
+      </div>
+      <!-- LIST ANALYTICS SECTION -->
+
+    </div>
+    <!-- FULL BODY CONTENT -->
+
+     <!-- FOOTER -->
+    <footer class="l-footer hidden-xs hidden-sm">
+      <p>@2014 Catapult Learning • All Rights Reserved • Two Aquarium Drive • Camden, NJ 08103 • 800-841-8730</p>
+    </footer>
+
+    <!-- MOBILE FOOTER -->
+    <footer class="l-footer mobile-footer visible-xs visible-sm">
+      <p>@2014 Catapult Learning <br> All Rights Reserved <br> Two Aquarium Drive <br> Camden, NJ 08103 • 800-841-8730</p>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/vendor/bootstrap.js"></script>
+    <script src="js/vendor/bootstrap/collapse.js"></script>
+    <script src="js/vendor/Chart.js"></script>
+    <script src="js/vendor/bootstrap-datepicker.js"></script>
+    <script src="js/vendor/icheck.min.js"></script>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/analytics.js"></script>
+
+  </body>
+</html>

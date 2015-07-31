@@ -1,0 +1,95 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * General Media Queries
+ * ----------------------------------------------------------------------------------------
+ */
+
+h1 {
+	@include mq (tablet) {
+		font-size: 30px;
+	}
+
+	@include mq ($until: tablet) {
+		font-size: 24px;
+	}
+}
+
+h2 {
+	@include mq (tablet) {
+		font-size: 24px;
+	}
+
+	@include mq ($until: tablet) {
+		font-size: 20px;
+	}
+}
+
+h3 {
+	@include mq (tablet) {
+		font-size: 18px;
+	}
+
+	@include mq ($until: tablet) {
+		font-size: 18px;
+	}
+}
+
+h4 {
+	@include mq (tablet) {
+		font-size: 12px;
+	}
+
+	@include mq ($until: tablet) {
+		font-size: 18px;
+	}
+}
+
+p {
+	@include mq (mobile, desktop) {
+		font-size: 16px;
+	}	
+}
+
+.small {
+	@include mq (tablet) {
+		font-size: 75%;
+	}
+
+	@include mq ($until: tablet) {
+		font-size: 85%;
+	}
+}
+
+.form-group {
+	@include mq (tablet) {
+        margin-bottom: 10px;
+    }
+}
+
+.btn {
+	@include mq (tablet) {
+		font-size: 14px;
+	}
+
+	@include mq ($until: tablet) {
+		font-size: 18px;
+	}
+
+}
+
+.btn-register {
+
+	@include mq ($until: desktop) {
+		width: 100% !important;
+	}
+}
+
+.form-control {
+
+    @include mq ($until: desktop) {
+    	 height: 60px;
+    	 text-indent: 25px;
+		font-size: 20px;
+    }
+}
+

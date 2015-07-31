@@ -1,0 +1,25 @@
+machine:
+  ruby:
+    version:
+      2.2.0
+
+dependencies:
+  override:
+    - cd frontend/ && npm install && ./node_modules/.bin/bower install
+    - cd backend/ && bundle install --jobs=3 --retry=3 --without development,production --no-deployment && ./bin/setup -v
+
+  cache_directories:
+    - "backend/vendor/bundle"
+    - "frontend/node_modules"
+    - "frontend/bower_components"
+
+test:
+  override:
+    - rake
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - ./backend/bin/deploy.sh
+      - ./frontend/node_modules/.bin/casperjs test frontend/tests/smoke_test.js

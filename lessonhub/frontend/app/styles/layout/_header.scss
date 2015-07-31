@@ -1,0 +1,972 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Header styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+
+/*General*/
+	.l-header {
+		position: relative;
+		z-index: 999;
+		height: 70px;
+		background: $color-header-bg;
+
+    &.edit-content {
+      background: darken($color-green, 6%);
+      color: #fff;
+
+      p {
+        display: inline-block;
+        height: 100%;
+        line-height: 70px;
+        vertical-align: middle;
+        overflow: hidden;
+        padding: 0 20px;
+        margin-bottom: 0;
+        letter-spacing: .5px;
+        @include transition(all 0.4s ease-out);
+
+        @include mq(tablet, desktop) {
+          font-size: 22px;
+          line-height: 1.5;
+          text-align: center;
+        }
+
+
+        @include mq($until: tablet) {
+          font-size: 18px;
+          text-align: center;
+          line-height: 1.5;
+          height: auto;
+        }
+
+      }
+    }
+	}
+
+	.nav-list {
+		padding: 0;
+		margin: 0;
+
+		&.align-left li {
+			line-height: 70px;
+		}
+
+		li {
+			font-family: $font;
+			display: inline-block;
+			font-size: 16px;
+			list-style: none;
+			vertical-align: middle;
+			color: $color-light-text;
+		}
+
+	}
+
+	#menubar #nav ul.align-left li.divider span.split {
+		display: inline-block;
+		width: 1px;
+		height: 20px;
+		margin: 0 12.5px;
+		vertical-align: sub;
+		background: $color-light-text;
+	}
+
+	.navbar-logo img {
+		width: 146px;
+		height: 26px;
+		margin-left: 35px;
+		vertical-align: sub;
+	}
+
+	#menubar #nav ul.align-right > li > a {
+		line-height: 70px;
+		padding: 0 35px;
+		vertical-align: middle;
+		font-size: 16px;
+		display: block;
+		color: #fff;
+
+		@include transition(all 0.2s ease-in);
+
+		&:hover {
+			text-decoration: none;
+			color: #fff;
+			background-color: darken($color-header-bg, 5%);
+		}
+	}
+
+  .edit-icon {
+		line-height: 70px;
+		vertical-align: middle;
+		font-size: 20px;
+		display: block;
+		padding: 0 20px;
+		color: darken(#fff, 20%);
+		border-left: solid 1px darken(#fff, 50%);
+		cursor: pointer;
+
+		&:hover {
+			color: #fff;
+		}
+  }
+
+
+
+/*Custom styles for navbar-toggle*/
+
+	.navbar-toggle {
+		position: relative;
+		width: 80px;
+		height: 80px;
+		float: right;
+		margin-right: 15px;
+		padding: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+		vertical-align: middle;
+		border-radius: 0;
+
+		@include mq($until: tablet) {
+			width: 50px;
+		}
+	}
+
+
+
+
+/*Top right menu (Profile)*/
+
+	ul.align-right li a span {
+		vertical-align: middle;
+		font-size: 12px;
+		margin-left: 10px;
+	}
+
+	#menubar #nav ul.align-right > li > a {
+		padding: 0 35px 0 52px;
+	}
+
+	.dropdown.nav-list.align-right {
+
+		li {
+
+			&.open {
+				background-color: darken($color-header-bg, 5%);
+				color: #fff;
+
+
+				a.dropdown-toggle {
+					color: #fff !important;
+				}
+
+				a span.icon-arrow-down:before {
+					content: "\e606" !important;
+				}
+
+				& > .dropdown-menu {
+					width: 600px;
+				}
+
+			}
+
+			.dropdown-menu {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0%;
+				z-index: 99999;
+				width: 0;
+				float: left;
+				min-width: 160px;
+				padding:0;
+				margin: 0;
+				list-style: none;
+				font-size: 14px;
+				text-align: left;
+				color: #fff;
+				background-color: darken($color-header-bg, 5%);
+				border: none;
+				overflow: hidden;
+
+				@include border-radius(0px 0px 0px 4px);
+
+
+				.divider {
+					display: block;
+					height: 1px;
+					margin: 0;
+					overflow: hidden;
+					line-height: 0 !important;
+					background-color: #000000;
+				}
+
+				li {
+					width: 100%;
+					font-size: 14px;
+
+
+				}
+
+				li > a {
+					display: block;
+					padding: 0 20px;
+					height: 72px;
+					line-height: 70px;
+					clear: both;
+					font-weight: normal;
+					color: $color-light-text;
+					white-space: nowrap;
+
+					@include transition(all 0.2s ease-in);
+
+					&:hover,
+					&:focus {
+						color: #fff;
+						background-color: $color-green;
+					}
+
+				}
+
+				.logout span {
+					color: inherit;
+					font-size: 16px;
+					vertical-align: middle;
+				}
+
+			}
+		}
+
+	}
+
+
+
+
+/*Green header*/
+
+	#sub-nav {
+		display: block;
+		position: static;
+		z-index: 998;
+		width: 100%;
+		height: 100px;
+		background: $color-green;
+		color: #fff;
+
+		> div.container-fluid > .row > div {
+			position: static !important;
+		}
+
+		@include mq($until: desktop) {
+			height: auto;
+		}
+
+		.dropdown.open {
+			background: #fff;
+			color: $color-green;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			@include mq($until: tablet) {
+				display: block;
+			}
+		}
+
+		.lesson-descr {
+
+      textarea {
+        background-color: rgba(0,0,0,0.0);
+        border: none;
+        overflow: auto;
+        outline: none;
+        width: 100%;
+        min-width: 100%;
+        padding-top: 20px;
+
+        @include box-shadow(none);
+        @include box-sizing(border-box);
+      }
+
+      .glyphicon {
+        cursor: pointer;
+        color: darken(#fff, 10%);
+        position: absolute;
+        top: 30px;
+        right: -5px;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+			display: inline-block;
+			height: 100%;
+			line-height: 90px;
+			padding: 0 20px;
+			vertical-align: middle;
+			overflow: hidden;
+
+
+			@include mq($until: tablet) {
+				height: auto;
+				padding: 0 30px 30px 30px;
+			}
+
+
+			p, textarea {
+				display: none;
+				margin-bottom: 0;
+				letter-spacing: .5px;
+				@include transition(all 0.4s ease-out);
+
+			&.active {
+				display: inherit;
+				line-height: initial;
+				vertical-align: middle;
+				@include transition(all 0.4s ease-out);
+
+				@include mq(tablet, desktop) {
+					font-size: 22px;
+					line-height: 1.5;
+					text-align: center;
+				}
+
+
+				@include mq($until: tablet) {
+					font-size: 18px;
+					text-align: center;
+					line-height: 1.5;
+				}
+			}
+
+			}
+		}
+
+		.controls {
+			display: inline-block;
+
+			li {
+				float: left;
+
+				&:last-child {
+					padding-left: 1px;
+				}
+
+				a {
+					display: block;
+					line-height: 100px;
+					width: 100px;
+					height: 100px;
+					color: #fff;
+					background: darken($color-green, 3%);
+
+					@include transition(all 0.2s ease-in);
+
+
+					&:hover {
+						background: darken($color-green, 6%);
+					}
+
+					@include mq($until: tablet) {
+						width: 100px;
+					}
+
+					span {
+						color: #fff;
+						font-size: 24px;
+						display: block;
+						text-align: center;
+						line-height: inherit;
+					}
+				}
+			}
+		}
+
+
+	}
+
+	div.mousescroll {
+	    overflow: hidden;
+
+	    &:hover {
+	    	overflow-y: scroll;
+	    }
+	}
+
+
+
+
+/*Hamburger menu icon*/
+
+	.hamburger {
+		position: absolute;
+		top: 47%;
+		left: 20%;
+
+		@include mq($until: tablet) {
+			left: 32%;
+		}
+	}
+
+	.navbar-toggle .hamburger {
+		position: relative;
+		display: block;
+		margin: auto;
+		vertical-align: middle;
+		width: 30px;
+		height: 10px;
+		top: 0;
+		left: 0;
+	}
+
+	.hamburger span,
+	.hamburger span:before,
+	.hamburger span:after {
+		cursor: pointer;
+		border-radius: 1px;
+		height: 3px;
+		width: 30px;
+		background: white;
+		position: absolute;
+		display: block;
+		content: '';
+	}
+
+	.hamburger span:before {
+		top: -9px;
+	}
+
+	.hamburger span:after {
+		bottom: -9px;
+	}
+
+	button:hover .hamburger span:before {
+		transform: translateY(-2px);
+	}
+
+	button:hover .hamburger span:after {
+		transform: translateY(2px);
+	}
+
+	.hamburger span,
+	.hamburger span:before,
+	.hamburger span:after {
+		transition: all 500ms ease-in-out, transform 400ms ease-out;
+	}
+
+	button.active .hamburger span {
+	  background-color: transparent;
+	}
+	button.active .hamburger span:before, button.active .hamburger span:after {
+	  top: 0;
+	}
+	button.active .hamburger span:before {
+	  transform: rotate(45deg);
+	  background: $color-green;
+	}
+	button.active .hamburger span:after {
+	  transform: rotate(-45deg);
+	  background: $color-green;
+	}
+
+
+  .dropdown {
+    input {
+      background-color: rgba(0,0,0,0.0);
+      width: 200px;
+    }
+
+    .glyphicon {
+      position: absolute;
+      top: 38%;
+      left: 20%;
+      font-size: 20px;
+      cursor: pointer;
+      color: darken(#fff, 10%);
+      z-index: 2;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+
+/*Big navigation for lessons*/
+	.lessons-nav {
+
+		display: inline-block;
+		height: 100%;
+
+		button, input {
+			padding: 10px 22px 16px 85px;
+			position: relative;
+			outline: none;
+			background: none;
+			border: none;
+			height: 100px;
+			font-size: 25px;
+			font-weight: 100;
+			vertical-align: middle;
+			letter-spacing: .5px;
+    }
+
+    button {
+			cursor: pointer;
+			@include transition(all 0.2s ease-in);
+
+
+      &.draft-mode {
+        cursor: text;
+
+        &:hover {
+          background: none;
+        }
+
+        &:focus,
+        &:active {
+          background: none;
+          color: #fff;
+        }
+      }
+
+			&:hover {
+				background: darken($color-green, 6%);
+			}
+
+			&.active:focus,
+			&.active:active {
+				background: #fff;
+				color: $color-green;
+			}
+
+			@include mq($until: tablet) {
+				width: 100%;
+				padding: 10px 22px 16px 75px;
+			}
+		}
+
+		li {
+			display: inline-block;
+			position: static;
+
+			@include mq($until: tablet) {
+				display: block;
+			}
+		}
+
+		.divider {
+			display: inline-block;
+			margin-left: -6px;
+			width: 1px;
+			height: 45px;
+			background: #fff;
+			vertical-align: middle;
+		}
+
+		.dropdown-menu {
+			position: absolute;
+			width: 600px;
+			padding: 25px;
+			top: 170px;
+			left: 0;
+			bottom: 0;
+			right: 0%;
+			z-index: 9999;
+			float: left;
+			min-width: 160px;
+			margin: 0;
+			list-style: none;
+			font-size: 14px;
+			text-align: left;
+			color: $color-text;
+			background-color: #fff;
+			border: none;
+			white-space: inherit;
+
+			@include border-radius(0px);
+			@include box-shadow(rgba(0, 0, 0, 0.200) 20px 10px 20px);
+			@include vendor-prefix(animation-duration, 0.4s);
+			@include transition(all 0.5s ease-in);
+
+			&.collapse.in {
+				@include mq(mobile, desktop) {
+					position: relative;
+					z-index: 999;
+				}
+			}
+
+
+			#skills-list {
+				position: absolute;
+				z-index: -1;
+				top: 144px;
+				bottom: 25px;
+				right: 25px;
+				left: 25px;
+				border-top: 1px solid $color-hr;
+				border-bottom: 1px solid $color-hr;
+				overflow: hidden;
+
+				&:hover {
+			    	overflow-y: scroll;
+			    }
+
+			    @include mq(mobile, desktop) {
+					overflow-y: scroll;
+				}
+
+				li {
+					position: relative;
+					display: block;
+					height: auto;
+					line-height: inherit;
+					border-bottom: 1px solid $color-hr;
+					border-left: 1px solid $color-hr;
+					border-right: 1px solid $color-hr;
+
+					@include transition(all 0.2s ease);
+
+					a {
+						display: block;
+						font-size: 16px;
+						color: $color-text;
+						line-height: inherit;
+						height: auto;
+						padding: 25px 20px 25px 120px;
+						white-space: normal;
+
+						&.active, &.active:hover {
+						  background: $color-green;
+						  color: #fff;
+						  cursor: default;
+						  .label {
+						    background-color: $color-green;
+						  }
+						}
+
+						&:hover {
+							background: $color-subtle-bg;
+							color: $color-green;
+
+							.label {
+								background-color: $color-green;
+							}
+						}
+
+						&:focus,
+						&:active {
+							background: darken($color-subtle-bg, 3%);
+						}
+
+						.label {
+							position: absolute;
+							top: 37%;
+							left: 5%;
+							padding: 5px 15px !important;
+
+							@include border-radius(4px);
+
+							color: #fff;
+							font-size: 12px;
+							font-weight: 600;
+
+							@include transition (all 0.2s ease);
+
+							&:hover {
+								background-color: $color-green;
+							}
+						}
+
+						.label-default {
+							background-color: lighten($color-text, 40%);
+						}
+
+						span:not(.label) {
+							display: block;
+						}
+					}
+				}
+			}
+
+			#lessons-list {
+
+				@extend #skills-list;
+				padding: 0;
+				counter-reset: lessonCounter;
+
+				&:hover {
+			    	overflow-y: scroll;
+			    }
+
+				li {
+					padding-left: 0;
+					border-left: none;
+
+				&:before {
+					counter-increment: lessonCounter;
+					content: counter(lessonCounter);
+					position: absolute;
+					top: 0;
+					line-height: 110px;
+					padding: 0 25px;
+					border-right: 1px solid $color-hr;
+					border-left: 1px solid $color-hr;
+				}
+
+
+					a {
+						padding: 20px 20px 20px 90px;
+						line-height: 35px;
+
+						&:hover {
+							background: $color-subtle-bg;
+							color: $color-green;
+
+							.label {
+								background-color: lighten($color-text, 40%);
+							}
+						}
+
+						.label {
+							position: relative;
+							margin-right: 10px;
+							left: 0;
+
+						&:hover {
+							background-color: $color-green;
+						}
+
+						}
+
+					}
+
+				}
+			}
+		}
+
+		#lessons-sort-switcher-row {
+			margin-top: 25px;
+
+			span {
+				display: inline-block;
+				width: 20%;
+				float: left;
+				line-height: 45px;
+				font-weight: 600;
+				letter-spacing: .5px;
+				color: $color-light-text;
+			}
+
+			a {
+				background: #fff;
+				color: $color-text;
+				padding: 10px 20px;
+				border: 1px solid #fff;
+				width: 25%;
+				display: inline-block;
+				text-align: center;
+				float: left;
+				font-size: 16px;
+				cursor: pointer;
+
+				&:hover {
+					color: $color-green;
+				}
+
+				&.active {
+					color: $color-text;
+					border-color: $color-hr;
+					border-bottom: 2px solid #fff;
+					cursor: default;
+
+					@include border-radius (6px 6px 0 0);
+				}
+			}
+
+		}
+
+	}
+
+	#sub-nav.menu-responsive {
+
+		.lessons-nav {
+			width: 100%;
+			position: absolute;
+
+			 li {
+			 	position: relative;
+				display: inline-block;
+				width: 100%;
+			}
+
+			#lesson-selectors-row {
+				margin-top: 20px;
+			}
+		}
+
+		.lesson-descr {
+			display: block;
+			padding: 25px;
+		}
+
+		.dropdown-menu {
+
+			top: 0;
+
+			&.collapse.in {
+				width: 100%;
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			#skills-list {
+				width: 94%;
+				top: 35%;
+				bottom: 4%;
+				right: 3%;
+				left: 3%;
+
+				li a {
+					font-size: 20px;
+					line-height: 2;
+					padding: 25px 20px 25px 155px;
+
+					.label {
+						top: 30%;
+						font-size: 18px;
+					}
+				}
+			}
+
+			.select-container {
+				margin-bottom: 15px;
+
+				.form-control {
+					text-indent: 10px;
+				}
+
+				&:after {
+					content: "";
+					width: 0;
+					height: 0;
+					border: 8px solid transparent;
+					border-color: #dbdbdb transparent transparent transparent;
+					position: absolute;
+					top: 28px;
+					right: 23px;
+				}
+			}
+		}
+	}
+
+
+
+
+/*Top header (Mobile)*/
+
+	.mobile-header {
+
+		.navbar-brand {
+			float: left;
+			padding: 20px 15px;
+			height: 81px;
+		}
+
+		.navbar-brand img {
+			width: 45px;
+			height: 30px;
+		}
+
+		.navbar-default {
+			background-color: $color-header-bg;
+			border: none;
+			z-index: 9999;
+		}
+
+		.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+			background: none;
+			border: none;
+		}
+
+		.navbar-default .navbar-toggle .icon-bar {
+			background-color: #fff;
+			margin: auto;
+		}
+
+		.navbar-toggle {
+			margin-top: 0;
+		}
+
+		.navbar-nav {
+			margin: 0 -15px;
+		}
+
+		.navbar-nav > li  {
+			border-top: 1px solid darken($color-header-bg, 5%);
+		}
+
+		.navbar-nav > li > a {
+			padding-top: 25px;
+			padding-bottom: 25px;
+			line-height: 30px;
+			color: #fff;
+			font-size: 20px;
+		}
+
+		.navbar-collapse {
+			border-top: 1px solid darken($color-header-bg, 5%);
+			box-shadow: none;
+			margin-top: 14px;
+		}
+
+		.navbar-default .navbar-nav > li {
+
+			&:hover {
+				background: darken($color-header-bg, 5%);
+			}
+		}
+
+		.navbar-default .navbar-nav > li > a {
+
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		.navbar-toggle .icon-bar {
+			display: block;
+			width: 20px;
+			height: 2px;
+			border-radius: 0;
+		}
+
+		.navbar-default .navbar-toggle {
+			border: none;
+		}
+
+		.navbar-toggle .icon-bar + .icon-bar {
+			margin-top: 4px;
+		}
+
+		span.icon-profile {
+			font-size: 35px;
+			color: #fff;
+		}
+	}
+
+

@@ -1,0 +1,17 @@
+<li {{bind-attr class=":dropdown :dropdown-custom isDropdownOpen:open"}}>
+
+  <button class="dropdown-toggle" id="dropdownMenu2"
+    aria-expanded="true" role="button" {{action "toggleDropdown"}}
+    {{bind-attr class=":dropdown-toggle isDropdownOpen:active"}}>
+
+    <span class="hamburger"><span></span></span>
+
+    {{model.title}}
+
+  </button>
+
+  {{render "main-menu"}}
+
+</li>
+
+<li class="divider hidden-xs"></li>

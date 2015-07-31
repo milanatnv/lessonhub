@@ -1,0 +1,19 @@
+<div class="main-wrapper">
+  {{ outlet }}
+</div>
+
+{{#if isFooterPresent}}
+  <!-- FOOTER -->
+  <footer class="l-footer animated fadeIn hidden-xs hidden-sm">
+    <div class="container">
+      <p>@2014 Catapult Learning • All Rights Reserved • Two Aquarium Drive • Camden, NJ 08103 • 800-841-8730</p>
+    </div>
+  </footer>
+
+  <!-- MOBILE FOOTER -->
+  <footer class="l-footer visible-xs visible-sm">
+    <div class="container">
+      <p>@2014 Catapult Learning <br> All Rights Reserved <br> Two Aquarium Drive <br> Camden, NJ 08103 • 800-841-8730</p>
+    </div>
+  </footer>
+{{/if}}

@@ -1,0 +1,130 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Other styles.
+ * ----------------------------------------------------------------------------------------
+ */
+
+
+/*Login*/
+
+#overlay, #registration {
+  opacity: 0;
+  transition: .5s;
+}
+
+#overlay {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba($color-header-bg, .8);
+  pointer-events: none;
+}
+
+#overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#registration {
+    position: relative;
+    width: 400px;
+    margin: 10% auto 0;
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+    background: #fff;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    transition-timing-function: cubic-bezier(0.3, 0, 0, 1.3);
+    transition-delay: .3s;
+
+    @include mq (tablet) {
+      margin: 30% auto 0 auto;
+    }
+
+    @include mq(tablet, $and: '(orientation: landscape)') {
+      margin: 15% auto 0 auto;
+    }
+
+    @include mq($until: tablet) {
+      width: 90%;
+      margin: 20% auto 0;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 0 0 40px 0;
+        font-weight: 300;
+        color: $color-text;
+    }
+
+    input {
+        padding: 0 0 0 45px;
+        margin-bottom: 10px;
+    }
+
+    .fieldset {
+
+        position: relative;
+
+        .input-icon {
+            display: inline-block;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            bottom: auto;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: $color-light-text;
+        }
+    }
+
+    .close {
+      position: absolute;
+      color: #000000;
+      right: 15px;
+      top: 10px;
+      opacity: 0.7;
+
+      .icon-cross:before {
+        font-size: 18px;
+
+        @include mq ($until: tablet) {
+          font-size: 30px;
+          line-height: 36px;
+        }
+
+      }
+    }
+
+}
+
+.open #registration {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+
+code {
+    display: none;
+}
+
+.no-pad-right {
+  padding-right: 0;
+}
+
+.no-pad {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+
+

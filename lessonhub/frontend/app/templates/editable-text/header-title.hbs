@@ -1,0 +1,16 @@
+<li class="dropdown dropdown-custom">
+  {{#if view.isEditing}}
+    <span class="glyphicon glyphicon-floppy-disk" 
+      {{action "saveContent" target="view"}}></span>
+      {{input value=view.content}}
+  {{else}}
+    <span class="glyphicon glyphicon-pencil" 
+        {{action "editContent" target="view"}}></span>
+    <button class="dropdown-toggle draft-mode"
+        {{action "editContent" target="view"}}>
+      {{model.title}}
+    </button>
+  {{/if}}
+</li>
+
+<li class="divider hidden-xs"></li>

@@ -1,0 +1,33 @@
+require 'rake'
+
+EMBER_PORT = ENV["EMBER_PORT"] || 4200
+RAILS_PORT = ENV["RAILS_PORT"] || 3000
+
+desc "Start backend and frontend server for development"
+task :server do
+  pids = [
+    spawn("cd backend && EMBER_PORT=#{EMBER_PORT} rails s -p #{RAILS_PORT}"),
+    spawn("cd frontend && ./node_modules/.bin/ember server --port=#{EMBER_PORT} --proxy=http://127.0.0.1:#{RAILS_PORT}"),
+  ]
+
+  trap "INT" do
+    Process.kill "INT", *pids
+    exit 1
+  end
+
+  loop do
+    sleep 1
+  end
+end
+
+desc "Run complete test suite"
+task :test do
+  exec("cd backend && rake test && cd ../frontend && ./node_modules/.bin/ember test")
+end
+
+desc "Deploy Lessonhub to Heroku: https://lessonhub-staging.herokuapp.com/"
+task :deploy do
+  exec 'cd backend && rake docs:generate && cd - && ./backend/bin/deploy.sh'
+end
+
+task :default => :test

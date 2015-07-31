@@ -1,0 +1,17 @@
+{{#if view.isEditing}}
+  {{textarea value=view.content rows=900 cols=900 class="active"}}
+  <span class="glyphicon glyphicon-floppy-disk" title="Save description"
+    {{action "saveContent" target="view" bubbles=false}}>
+  </span>
+{{else}}
+  <p {{bind-attr class="isDraftMode:edit :description :active"}}
+     {{action "editContent" target="view"}}>
+     {{view.content}}
+
+     {{#if isDraftMode}}
+       <span class="glyphicon glyphicon-pencil" title="Edit description"
+         {{action "editContent" target="view" bubbles=false}}>
+       </span>
+     {{/if}}
+  </p>
+{{/if}}

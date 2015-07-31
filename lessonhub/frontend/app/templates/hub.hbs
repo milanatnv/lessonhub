@@ -1,0 +1,299 @@
+<!-- HEADER (MOBILE) -->
+<header class="l-header mobile-header visible-xs">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#profile-menu">
+          <span class="icon-profile"></span>
+        </button>
+
+        <a class="navbar-brand" href="/">
+          <img alt="Catapult Learning" src="/assets/images/logo-mobile.svg">
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="profile-menu">
+        <ul class="nav navbar-nav">
+          <li>{{#link-to ""}}Analytics{{/link-to}}</li>
+          <li>{{#link-to ""}}Content management{{/link-to}}</li>
+          <li>{{#link-to ""}}User management{{/link-to}}</li>
+          <li>{{#link-to ""}}Logout{{/link-to}}</li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+<!-- /HEADER (MOBILE) -->
+
+<!-- HEADER	(DESKTOP) -->
+<header class="l-header hidden-xs" id="menubar">
+  <nav id="nav">
+    <ul class="nav-list align-left">
+      <li>
+        <a class="navbar-logo" href="/">
+          <img alt="Catapult Learning" src="/assets/images/logo.svg">
+        </a>
+      </li>
+      <li class="divider">
+        <span class="split"></span>
+      </li>
+      <li>Lesson Hub</li>
+    </ul>
+
+    <a {{action "toggleDraftMode"}} class="align-right edit-icon">
+      {{#if isDraftMode}}
+        <span class="glyphicon glyphicon-floppy-disk" title="Save changes"></span>
+      {{else}}
+        <span class="glyphicon glyphicon-pencil" title="Enter draft mode"></span>
+      {{/if}}
+    </a>
+
+    <!-- Profile drop-down menu -->
+    <ul class="dropdown nav-list align-right">
+      <li>
+        <a href="#" class="dropdown-toggle" id="profile-menu" data-toggle="dropdown" aria-expanded="true">{{user.name}}
+          <span class="icon-arrow-down"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="profile-menu">
+          <li role="presentation">{{#link-to "" role="menuitem" tabindex="-1" }}Analytics{{/link-to}}</li>
+          <li role="presentation">{{#link-to "" role="menuitem" tabindex="-1" }}Content management{{/link-to}}</li>
+          <li role="presentation">{{#link-to "" role="menuitem" tabindex="-1" }}User management{{/link-to}}</li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation">{{#link-to "" role="menuitem" tabindex="-1" }}Logout{{/link-to}}</li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+{{#if isDraftMode}}
+  <header class="l-header edit-content hidden-xs">
+    <nav>
+      <div class="container-fluid no-pad">
+        <div class="row">
+
+          <div class="col-lg-2 col-md-3 col-sm-6 col-xs-2">
+            <ul class='lessons-nav'></ul>
+          </div>
+
+          <div class="col-lg-8 col-md-6 col-xs-10 col-xs-offset-2 col-md-offset-0">
+            <p>This page is in draft mode. Click on editable text to customize it.</p>
+          </div>
+
+
+          <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 pull-right no-pad">
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+{{/if}}
+<!-- /HEADER (DESKTOP) -->
+
+<!-- GREEN HEADER -->
+{{render "hub/header" tagName="nav" id="sub-nav"}}
+<!-- / GREEN HEADER -->
+
+<div {{bind-attr class=":overlay view.isDropdownOpen::hidden"}}></div>
+
+
+<!-- SECTION SELECTORS -->
+<section>
+  <div class="l-main">
+    <ul id="section-selectors" class="hidden-sm hidden-xs">
+      <li>{{#link-to "skill.show.index" model}}Skill Groups{{/link-to}}</li>
+      <li>{{#link-to "skill.show.pre-assesment"}}Pre-Assessment{{/link-to}}</li>
+      <li>{{#link-to "skill.show.best-practices"}}Best Practices & Suggested Activities{{/link-to}}</li>
+      <li>{{#link-to "skill.show.evidence-of-learning"}}Evidence of Learning{{/link-to}}</li>
+    </ul>
+  </div>
+</section>
+<!-- / SECTION SELECTORS -->
+
+
+<!-- SECTION SELECTORS (MOBILE) -->
+<div class="section-selectors-collapsed visible-xs visible-sm">
+  <div class="select-container">
+    <select class="form-control visible-xs visible-sm" id="section-selectors">
+      <option>{{#link-to "skill.show.index" model}}Skill Groups{{/link-to}}</option>
+      <option>{{#link-to "skill.show.pre-assesment"}}Pre-Assessment{{/link-to}}</option>
+      <option>{{#link-to "skill.show.best-practices"}}Best Practices & Suggested Activities{{/link-to}}</option>
+      <option>{{#link-to "skill.show.evidence-of-learning"}}Evidence of Learning{{/link-to}}</option>
+    </select>
+  </div>
+</div>
+<!-- / SECTION SELECTORS (TABLETS & MOBILE) -->
+
+
+<!-- HUB SECTIONS -->
+<div id="hub-sections-row" class="hidden-sm">
+  <div class="skills-section animated active">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <div class="skill pre-requisite">
+            <span class="icon-pre-requisite"></span>
+            <h3>PRE-REQUISITE SKILLS</h3>
+            <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+            <div class="grey-box">
+              <h3>AchieveMath Level K <br>Lessons 1-12</h3>
+              <button class="btn btn-success" type="button">VIEW LESSONS</button>
+
+              <ul class="additional-links">
+                <li>
+                  {{#link-to ""}}
+                    Standards Alignment
+                  {{/link-to}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <div class="skill current">
+            <span class="icon-current"></span>
+            <h3>CURRENT SKILLS</h3>
+            {{view 'editable-text' content=model.description
+                                   templateName="editable-text/current-skills"}}
+            <div class="grey-box">
+              <h3>AchieveMath Level K <br>Lessons 1-12</h3>
+              <button type="button" class="btn btn-success">VIEW LESSONS</button>
+
+              <ul class="additional-links">
+                <li>
+                  {{#link-to "" classNames="performance-task"}}
+                    <span>PERFORMANCE TASK</span>
+                    Jelly Bean Fun
+                  {{/link-to}}
+                </li>
+                <li>
+                  {{#link-to ""}}
+                    Standards Alignment
+                  {{/link-to}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+          <div class="skill growth">
+            <span class="icon-growth"></span>
+            <h3>GROWTH SKILLS</h3>
+            <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+            <div class="grey-box">
+              <h3>AchieveMath Level K <br>Lessons 1-12</h3>
+              <button type="button" class="btn btn-success">VIEW LESSONS</button>
+
+              <ul class="additional-links">
+                <li>
+                  {{#link-to "" classNames="performance-task"}}
+                    <span>PERFORMANCE TASK</span>
+                    Jelly Bean Fun
+                  {{/link-to}}
+                </li>
+                <li>
+                  {{#link-to ""}}
+                    Standards Alignment
+                  {{/link-to}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pre-assesment animated">
+  </div>
+  <div class="best-practices animated"></div>
+  <div class="evidence-of-learning animated"></div>
+</div>
+<!-- / HUB SECTIONS -->
+
+<!-- HUB SECTIONS (TABLETS)-->
+<div class="hub-sections-tablets visible-sm">
+  <div class="container">
+    <div class="skill pre-requisite">
+      <div class="row">
+        <div class="col-sm-2">
+          <span class="icon-pre-requisite"></span>
+        </div>
+        <div class="col-sm-6">
+          <div class="skill-container">
+            <h3>PRE-REQUISITE SKILLS</h3>
+            <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+
+            <ul class="additional-links-tablets">
+              <li>{{#link-to ""}}Performance Task{{/link-to}}</li>
+              <li class="divider"></li>
+              <li>{{#link-to ""}}Standards Alignment{{/link-to}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h3 class="title-secondary">AchieveMath Level K <br>Lessons 1-12</h3>
+          <button class="btn btn-success" type="button">VIEW LESSONS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill current">
+      <div class="row">
+        <div class="col-sm-2">
+          <span class="icon-current"></span>
+        </div>
+        <div class="col-sm-6">
+          <div class="skill-container">
+            <h3>CURRENT SKILLS</h3>
+            <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+
+            <ul class="additional-links-tablets">
+              <li>{{#link-to ""}}Performance Task{{/link-to}}</li>
+              <li class="divider"></li>
+              <li>{{#link-to ""}}Standards Alignment{{/link-to}}</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="col-sm-4">
+          <h3 class="title-secondary">AchieveMath Level K <br>Lessons 1-12</h3>
+          <button class="btn btn-success" type="button">VIEW LESSONS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill growth">
+      <div class="row">
+        <div class="col-sm-2">
+          <span class="icon-growth"></span>
+        </div>
+        <div class="col-sm-6">
+          <div class="skill-container">
+            <h3>GROWTH SKILLS</h3>
+            <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+
+            <ul class="additional-links-tablets">
+              <li>{{#link-to ""}}Performance Task{{/link-to}}</li>
+              <li class="divider"></li>
+              <li>{{#link-to ""}}Standards Alignment{{/link-to}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h3 class="title-secondary">AchieveMath Level K <br>Lessons 1-12</h3>
+          <button class="btn btn-success" type="button">VIEW LESSONS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</div>
+<!-- / HUB SECTIONS (TABLETS) -->
+
+<!-- Non-semantic div for sticky footer. Don't delete! -->
+<div class="root-footer"></div>

@@ -1,0 +1,89 @@
+<div class="row" id="lesson-selectors-row">
+
+  <div class="col-md-5 no-pad-right">
+    <div class="select-container">
+      <select class="form-control">
+        <option>
+        Mathematics
+        </option>
+        <option>
+        Reading / Language Arts
+        </option>
+      </select>
+
+    </div>
+  </div>
+
+  <div class="col-md-4 no-pad-right">
+    <div class="select-container">
+      <select class="form-control">
+        <option value="primary">
+        Primary Grades
+        </option>
+        <option value="middle">
+        Middle Grades
+        </option>
+        <option value="high">
+        High School
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="select-container">
+      <select class="form-control">
+        <option>
+        6-8
+        </option>
+      </select>
+    </div>
+  </div>
+
+</div>
+<!-- /#lesson-selectors-row -->
+
+<div class="row" id="lessons-sort-switcher-row">
+  <div class="col-md-12">
+    <span>
+      SORT BY:
+    </span>
+
+    <div>
+      <a {{bind-attr class=":skills isSkillsActive:active" disabled="isSkillsActive"}}
+         {{action "switchDropdownTab"}}>
+        Skill
+      </a>
+      <a {{bind-attr class=":lessons isLessonsActive:active" disabled="isLessonsActive"}}
+         {{action "switchDropdownTab"}}>
+        Lesson
+      </a>
+    </div>
+
+  </div>
+  <!-- /.col-md-12 -->
+
+</div>
+<!-- /#lessons-sort-switcher-row -->
+
+<ul id="skills-list" {{bind-attr class="isSkillsActive::hidden"}}>
+  {{#each skill in controller.skills}}
+    {{view "skill-item" skill=skill}}
+  {{/each}}
+</ul>
+
+<ol id="lessons-list" {{bind-attr class="isLessonsActive::hidden"}}>
+  {{#each lesson in controller.lessons}}
+    <li>
+      <a href="javascript:void(0)">
+        {{lesson.title}}
+      <br>
+      {{#each tab in lesson.tabs}}
+        <span class="label label-default">
+          {{tab}}
+        </span>
+      {{/each}}
+      </a>
+    </li>
+  {{/each}}
+</ol>

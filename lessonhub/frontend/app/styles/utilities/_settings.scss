@@ -1,0 +1,34 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Site settings.
+ * ----------------------------------------------------------------------------------------
+ */
+
+/* Typography */
+$base-font-size: 18px;
+$font: 'Open Sans', Helvetica, Arial, sans-serif;
+
+$baseline: $base-font-size * 1.5;
+
+/* Colors */
+$color-header-bg: #282a3b;
+$color-subtle-bg: #f6f9fb;
+
+$color-text: #454A4E;
+$color-light-text: #BDC0C2;
+
+$color-hr: #dbdbdb;
+
+$color-green: #57ba54;
+$color-blue: #40B8E6; 
+$color-orange: #EDBA2D;
+$color-darker-green: #32A847; 
+$color-dark: #454545;
+
+$color-validation-error: #F15A29;
+
+
+/* Positioning */
+$margin-multiplier: 1.5;
+
+$general-margin: $baseline * $margin-multiplier;

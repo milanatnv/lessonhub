@@ -1,0 +1,19 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Divider styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+hr {
+	display: block;
+	height: 1px;
+	margin: $general-margin 0;
+
+	border: none;
+
+	background-color: $color-hr;
+}
+
+.height-space1 {
+	height: 5rem;
+}

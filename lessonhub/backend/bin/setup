@@ -1,0 +1,40 @@
+#!/bin/sh
+(
+export PATH="$(dirname "$0"):$PATH"  # Use binstubs
+
+if [ "$1" = "-v" ]; then
+  exec 3>&1
+else
+  exec 3>/dev/null
+fi
+
+if [ ! -f config/database.yml ]; then
+  echo "Copying config/database.yml..."
+  cp config/database.yml.example config/database.yml
+fi
+
+# Wipe out logs.
+echo "Cleaning out old logs..."
+{ rm -f log/*
+} >&3 2>&1
+
+# Install dependencies.
+echo "Installing dependencies..."
+{ gem list -i bundler || gem install bundler
+  bundle install
+} >&3 2>&1
+
+# Wipe and load the database unless KEEPDB=1 env var is set.
+if [ -z "$KEEPDB" ]; then
+  echo "Setting up the database..."
+  { rake db:drop:all db:create:all db:schema:load db:seed --trace
+    rake db:test:prepare --trace
+  } >&3 2>&1
+fi
+)
+if [ $? = 0 ]; then
+  echo "Done!"
+else
+  echo "Something went wrong. Run in verbose mode to get more info: rake db:setup -v"
+fi
+

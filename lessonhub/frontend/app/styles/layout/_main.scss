@@ -1,0 +1,594 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Main styles.
+ * ----------------------------------------------------------------------------------------
+ */
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+/*Welcome page*/
+
+	#welcome-page {
+
+
+		.welcome-section {
+			width: 768px;
+			margin: auto;
+			padding-top: 7%;
+
+			@include mq (tablet) {
+				width: 100%;
+			}
+
+			@include mq ($until: tablet) {
+				width: 100%;
+				padding-top: 0;
+			}
+
+		}
+
+		.welcome-section h1 {
+			color: $color-green;
+			font-size: 42px;
+			font-weight: 300;
+			margin-bottom: 30px;
+
+			@include vendor-prefix(animation-duration, 1s);
+			@include vendor-prefix(animation-delay, 1s);
+
+			@include mq(mobile, desktop) {
+				@include vendor-prefix(animation-duration, 0s);
+				@include vendor-prefix(animation-delay, 0s);
+			}
+
+		}
+
+		.welcome-section p {
+			@include vendor-prefix(animation-duration, 1s);
+			@include vendor-prefix(animation-delay, 1.3s);
+
+			@include mq(mobile, desktop) {
+				@include vendor-prefix(animation-duration, 0s);
+				@include vendor-prefix(animation-delay, 0s);
+			}
+
+		}
+
+		.welcome-section p.small {
+			color: $color-light-text;
+
+			@include vendor-prefix(animation-duration, 1s);
+			@include vendor-prefix(animation-delay, 1.4s);
+
+			@include mq(mobile, desktop) {
+				@include vendor-prefix(animation-duration, 0s);
+				@include vendor-prefix(animation-delay, 0s);
+			}
+		}
+
+		.welcome-section .states {
+		    margin: 0 auto;
+
+		    @include vendor-prefix(animation-duration, 1s);
+		    @include vendor-prefix(animation-delay, 1.5s);
+
+			@include mq(mobile, desktop) {
+				@include vendor-prefix(animation-duration, 0s);
+				@include vendor-prefix(animation-delay, 0s);
+			}
+
+      label {
+        display: inline-block;
+        vertical-align: middle;
+        float: none;
+        font-weight: normal;
+      }
+
+      .select-container {
+        width: 200px;
+        display: inline-block;
+        margin-left: 10px;
+      }
+
+      .dropdown-menu {
+        li.selected {
+          background-color: darken(white, 10%);
+        }
+      }
+
+		}
+
+		.password-section {
+			display: none;
+			margin: 40px auto;
+			padding-left: 34%;
+
+			@include mq(tablet, desktop) {
+				width: 100%;
+				margin: 40px auto;
+	    		padding: 0 20%;
+			}
+
+			@include mq($until:desktop, $and: '(orientation: landscape)') {
+				width: 100%;
+	    		padding: 0 28%;
+			}
+
+			@include mq($until: tablet) {
+				padding: 0;
+			}
+
+		}
+
+		.password-caption {
+			padding-top: 30px;
+			border-top: 1px solid $color-hr;
+		}
+
+		.btn-register {
+			margin-top: 1em;
+			width: 70%;
+		}
+	}
+
+
+
+/*HUB page*/
+
+	#section-selectors {
+		display: block;
+		list-style: none;
+		position: relative;
+		padding: 0;
+		margin: 0 auto;
+		text-align: center;
+		width: 100%;
+		margin-top: 25px;
+
+		li {
+			display: inline-block;
+			font-size: 16px;
+			padding: 0 0 12.5px 0;
+			margin: 0 45px;
+			color: $color-light-text;
+
+			@include transition(all 0.2s ease);
+
+			&:hover {
+				color: $color-text;
+			}
+
+			@include mq (tablet) {
+				margin: 0 25px;
+			}
+
+			a {
+				color: inherit;
+				font-size: inherit;
+
+			&.active {
+				position: relative;
+				color: $color-text;
+				padding-bottom: 5px;
+
+				&:before {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 100%;
+					height: 4px;
+					top: 30px;
+					left: 0;
+					background: $color-green;
+
+					@include border-radius(6px);
+					@include transition(all 0.4s ease);
+				}
+			}
+
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+
+			&:last-child {
+				padding-right:0;
+				border-right: none;
+			}
+
+		}
+	}
+
+	.section-selectors-collapsed {
+
+		.form-control {
+			height: 60px;
+			border-bottom: 1px solid $color-hr;
+
+			@include border-radius(1px);
+		}
+
+		#section-selectors {
+			margin-top: 0;
+		}
+
+		.select-container:after {
+
+		 	@include mq ($until: desktop) {
+
+				border: 8px solid transparent;
+				border-color: #dbdbdb transparent transparent transparent;
+				top: 25px;
+				right: 30px;
+
+				@include border-radius(0);
+		    }
+		}
+	}
+
+	#hub-sections-row {
+
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		margin: 80px auto;
+
+		@include mq($until: tablet) {
+			margin: 40px auto;
+		}
+
+		& > div {
+			display: none;
+		}
+
+		& > div.active {
+			display: block;
+		}
+
+		.skills-section {
+
+			@include vendor-prefix(animation-duration, 0.6s);
+		}
+
+    p.edit {
+      background: darken(#fff, 5%);
+      cursor: default;
+    }
+
+    textarea {
+      width: 100%;
+    }
+
+		.skill {
+
+			padding: 0 30px 0 0;
+			border-right: 1px solid $color-hr;
+
+			 @include mq($until: tablet) {
+				border-right: none;
+				padding: 30px 30px 0 30px;
+				margin-bottom: 35px;
+				background: #fff;
+
+				@include border-radius (4px);
+				@include box-shadow (rgba(0, 0, 0, 0.1) 0px 0px 5px);
+			}
+
+      .glyphicon {
+        cursor: pointer;
+        float: right;
+        position: relative;
+
+        &:hover {
+          color: lighten(black, 50%);
+        }
+      }
+
+			h3 {
+				margin: 35px auto 25px;
+				font-weight: 600;
+
+				@include mq($until: tablet) {
+					font-size: 22px;
+				}
+			}
+
+			p {
+
+				@include mq($until: tablet) {
+					font-size: 18px;
+					line-height: 1.5;
+				}
+			}
+
+		&.growth {
+			border-color: #fff;
+		}
+
+			.grey-box {
+				padding: 40px 40px 0 40px;
+				background: $color-subtle-bg;
+
+				@include border-radius(6px);
+
+				@include mq($until: tablet) {
+					padding: 30px 0 0 0;
+					background: none;
+				}
+
+				h3 {
+					margin: 0;
+					font-size: 18px;
+					line-height: normal;
+					font-weight: 400;
+
+					@include mq($until: tablet) {
+						font-size: 20px;
+					}
+
+				}
+
+				button {
+					margin: 30px 0;
+
+
+					@include mq($until: tablet) {
+						font-size: 16px;
+						width: 85%;
+					}
+
+				}
+
+				.additional-links {
+					padding: 0;
+					margin: 0 -40px;
+					list-style: none;
+
+					@include mq($until: tablet) {
+						margin: 0 -30px;
+					}
+
+					li {
+						position: relative;
+						overflow: hidden;
+						border-top: 1px solid $color-hr;
+						text-align: left;
+
+						@include transition(all 0.2s ease-in);
+
+						&:before {
+							content: '\e602';
+							font-family: 'lessonhub';
+							font-size: 18px;
+							font-weight: bold;
+							color: $color-subtle-bg;
+							display: block;
+							position: absolute;
+							top: 34%;
+							right: 7%;
+
+							@include transition(all 0.2s ease-in);
+						}
+
+						&:hover {
+							background: darken($color-subtle-bg, 2%);
+
+							&:before {
+								color: $color-green;
+								right: 5%;
+							}
+						}
+
+						a {
+							height: 75px;
+							line-height: 75px;
+							color: $color-green;
+							text-align: left;
+							margin-left: 25px;
+							display: block;
+							font-weight: 600;
+
+							&:hover {
+								text-decoration: none;
+							}
+
+							@include mq($until: tablet) {
+								font-size: 18px;
+							}
+
+							span {
+								font-size: 12px;
+								color: $color-light-text;
+								display: block;
+								margin: 30px 0 -15px;
+								line-height: 0;
+								text-align: left;
+								font-weight: 400;
+
+								@include mq(mobile, desktop) {
+									font-size: 16px;
+									margin: 30px 0 -10px;
+								}
+
+							}
+						}
+
+						.performance-task {
+							height: 55px;
+						}
+					}
+				}
+			}
+
+		}
+
+		span.icon-pre-requisite {
+			font-size: 125px;
+
+			@include mq(mobile, desktop) {
+				font-size: 185px;
+			}
+
+			@include mq($until: tablet) {
+				font-size: 155px;
+			}
+		}
+
+		span.icon-current {
+			font-size: 125px;
+
+			@include mq(mobile, desktop) {
+				font-size: 185px;
+			}
+
+			@include mq($until: tablet) {
+				font-size: 155px;
+			}
+		}
+
+		span.icon-growth {
+			font-size: 125px;
+
+			@include mq(mobile, desktop) {
+				font-size: 185px;
+			}
+
+			@include mq($until: tablet) {
+				font-size: 155px;
+			}
+		}
+
+	}
+
+	span.icon-pre-requisite {
+		color: $color-orange;
+	}
+
+	span.icon-current {
+		color: $color-green;
+	}
+
+	span.icon-growth {
+		color: $color-blue;
+	}
+
+	.modal-open {
+		position: relative;
+	}
+
+	.overlay {
+		height: 100%;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		position: absolute;
+		background: rgba($color-header-bg, .85);
+
+		@include transition (all, 0.2s);
+	}
+
+	/*Styles for HUB seections (Tablets)*/
+	.hub-sections-tablets {
+
+		.title-secondary {
+			color: $color-text;
+			text-align: center;
+			font-size: 18px;
+			line-height: 1.3;
+			margin: 30px auto;
+		}
+
+		.skill {
+			margin: 50px auto;
+			border-bottom: 1px solid $color-hr;
+
+			&.growth {
+				border-bottom: none;
+			}
+		}
+
+		span {
+			display: block;
+			margin-top: 20px;
+
+			font-size: 95px;
+		}
+
+		.skill-container {
+			margin-bottom: 30px;
+			padding-right: 30px;
+			border-right: 1px solid $color-hr;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		.pre-requisite .skill-container > h3 {
+			color: $color-orange;
+			font-weight: 600;
+			font-size: 22px;
+		}
+
+		.current .skill-container > h3 {
+			color: $color-green;
+			font-weight: 600;
+			font-size: 22px;
+		}
+
+		.growth .skill-container > h3 {
+			color: $color-blue;
+			font-weight: 600;
+			font-size: 22px;
+		}
+
+
+		.additional-links-tablets {
+			margin: 20px 0 0 0;
+			padding: 15px 0 0 0;
+			list-style: none;
+			border-top: 1px solid $color-hr;
+
+
+			li {
+				display: inline-block;
+
+			&.divider {
+				width: 1px;
+				height: 14px;
+				vertical-align: middle;
+				background: $color-hr;
+				margin: 0 15px;
+			}
+
+				a {
+					text-transform: uppercase;
+					color: $color-green;
+					font-weight: 600;
+					font-size: 12px;
+				}
+			}
+
+
+		}
+	}
+
+	#lessonhub-page {
+
+		@include mq ($until:tablet) {
+			background: #f6f9fb;
+		}
+	}
+
+
+
+/*Lesson page*/
+

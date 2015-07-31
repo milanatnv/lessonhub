@@ -1,0 +1,18 @@
+development: &DEVELOPMENT
+  adapter: postgresql
+  database: lesson_hub_development
+  host: localhost
+  pool: 5
+  timeout: 5000
+
+staging:
+  <<: *DEVELOPMENT
+
+test: &TEST
+  <<: *DEVELOPMENT
+  database: lesson_hub_test
+  min_messages: warning
+
+production:
+  adapter: postgresql
+  database: lesson_hub_production

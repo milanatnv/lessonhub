@@ -1,0 +1,28 @@
+// Contains keys for keyboard events that are interesting.
+
+export default {
+  backSpace: 8,
+  tab: 9,
+  enter: 13,
+  shift: 16,
+  ctrl: 17,
+  alt: 18,
+  esc: 27,
+  escape: 27,
+  space: 32,
+  leftWindows: 91,
+  rightWindows: 92,
+  pageUp: 33,
+  pageDown: 34,
+  end: 35,
+  home: 36,
+  leftArrow: 37,
+  upArrow: 38,
+  rightArrow: 39,
+  downArrow: 40,
+  insert: 45,
+  deleteKey: 46,
+  zero: 48,
+  a: 65,
+  z: 90,
+};

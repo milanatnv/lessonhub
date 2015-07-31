@@ -1,0 +1,58 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Base styles.
+ * ----------------------------------------------------------------------------------------
+ */
+
+
+ * {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+body {
+	height: 100%;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 0.2px;
+	line-height: $baseline;
+	font-family: $font;
+	font-size: $base-font-size;
+
+}
+
+p {
+	margin-bottom: $baseline;
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+blockquote {
+	margin: 0;
+
+	font-style: italic;
+
+	cite {
+		font-size: .75rem;
+		font-style: normal;
+
+		&:before {
+			content: "- ";
+		}
+	}
+}
+
+a {
+	&:focus,
+	&:active {
+		outline:none;
+		text-decoration: none;
+	}
+}

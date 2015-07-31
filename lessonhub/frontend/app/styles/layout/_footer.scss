@@ -1,0 +1,44 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Footer styles.
+ * ----------------------------------------------------------------------------------------
+ */
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+
+.l-footer {
+	position: relative;
+	width: 100%;
+	height: initial;
+	border-top: 1px solid $color-hr;
+	padding: 25px 0;
+	clear:both;
+
+	p {
+		font-size: 13px;
+		text-align: center;
+		margin-bottom: 0;
+
+		color: $color-light-text;
+	}
+
+}
+
+.mobile-footer {
+
+	p {
+		font-size: 18px;
+		line-height: 2;
+
+		@include mq($until: tablet) {
+			font-size: 14px;
+		}
+	}
+}

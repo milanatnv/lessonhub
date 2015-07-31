@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <title>LessonHUB</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google font: Open Sans -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="css/vendor/animate.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hub.css" />
+
+    <!-- Ionicons -->
+    <link href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css
+    ' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+  <body id="lessonhub-page">
+
+
+    <!-- MAIN WRAPPER. REQUIRED FOR STICKY FOOTER -->
+    <div id="st-container" class="main-wrapper st-container">
+
+      <!-- Main menu -->
+      <nav class="st-menu st-effect-4" role="menu" id="menu-2">
+        <div class="lessons-nav">
+            <div class="sidebar-menu">
+                <div class="sidebar-header">
+                    <div class="row" id="lesson-selectors-row">
+                      <div class="no-pad-right" style="width: 40%; padding-right: 7px;">
+                        <div class="select-container">
+                          <select class="form-control" onchange="this.blur()">
+                            <option>AchieveMath</option>
+                            <option>AchieveReading</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="no-pad-right" style="width: 35%; padding: 0px 7px;">
+                        <div class="select-container">
+                          <select class="form-control" onchange="this.blur()">
+                            <option value="primary">Primary Grades</option>
+                            <option value="middle">Middle Grades</option>
+                            <option value="high">High School</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div style="width: 25%; padding-left: 7px;">
+                        <div class="select-container">
+                          <select class="form-control" onchange="this.blur()">
+                            <option>6-8</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /#lesson-selectors-row -->
+
+                    <div class="row" id="lessons-sort-switcher-row">
+                      <div class="">
+                        <span class="sort-by">Sort by</span>
+                      </div>
+                      <div class="">
+                        <a class="skills active" href="javascript:void(0)">Skill</a>
+                        <a class="lessons" href="javascript:void(0)">Lesson</a>
+                      </div>
+                    </div>
+                    <!-- /#lessons-sort-switcher-row -->
+                </div>
+                <div class="sidebar-main">
+                    <ul id="skills-list" class="scrollbar-inner">
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Know number names and the count sequence</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Count to tell number of objects</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Compare numbers</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Identify and describe shapes</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Classify objects and count the number of objects in categories</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Describe and compare measurable attributes</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Analyze, compare, create, and compose shapes</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Represent and solve problems involving addition and subtraction</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Add and subtract within 20</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Understand and apply properties of operations and the relationship between addition and subtract on</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Work with numbers 11-19 to gain foundations for place value</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="skill-label">K.CC.1</span>
+                          <p class="skill-text">Understand addition as putting together and adding to, and understand subtraction as taking apart and taking from</p>
+                        </a>
+                      </li>
+                    </ul>
+                    <ol id="lessons-list" style="display: none;" class="scrollbar-inner">
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="lesson-number">1</span>
+                          <span class="lesson-content">
+                              <span class="lesson-text">Read and write numbers 0-5</span>                                                        
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">K.CC.1</span>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="lesson-number">2</span>
+                          <span class="lesson-content">
+                              <span class="lesson-text">Read and write numbers 0-5</span>                          
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">K.CC.1</span>                              
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis.">K.CC.1</span>                              
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="lesson-number">3</span>
+                          <span class="lesson-content">
+                              <span class="lesson-text">Read and write numbers 6-10</span>                          
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis.">K.CC.1</span>                                                            
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="lesson-number">4</span>
+                          <span class="lesson-content">
+                              <span class="lesson-text">Read and write numbers 6-10</span>                          
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">K.CC.1</span>                                                            
+                          </span>
+                        </a>
+                      </li>
+                       <li>
+                        <a href="javascript:void(0)">
+                          <span class="lesson-number">5</span>
+                          <span class="lesson-content">
+                              <span class="lesson-text">Match number words to numbers (0-5)</span>                          
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla.">K.CC.1</span>                              
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">K.CC.1</span>                             
+                          </span>
+                        </a>
+                      </li>
+                       <li>
+                        <a href="javascript:void(0)">
+                          <span class="lesson-number">6</span>
+                          <span class="lesson-content">
+                              <span class="lesson-text">Match number words to numbers (6-10)</span>
+                          </span>
+                        </a>     
+                      </li>
+                       <li>
+                        <a href="javascript:void(0)">
+                          <span class="lesson-number">7</span>
+                          <span class="lesson-content">
+                              <span class="lesson-text">Rote counting (1-10)</span>                          
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla.">K.CC.1</span>                              
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">K.CC.1</span>                              
+                          </span>
+                        </a>
+                      </li>
+                       <li>
+                        <a href="javascript:void(0)">
+                          <span class="lesson-number">8</span>
+                          <span class="lesson-content">
+                              <span class="lesson-text">Identify missing number in rote (1-10)</span>                          
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla.">K.CC.1</span>                              
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">K.CC.1</span>                                                            
+                          </span>
+                        </a>
+                      </li>
+                       <li>
+                        <a href="javascript:void(0)">
+                          <span class="lesson-number">9</span>
+                          <span class="lesson-content">
+                              <span class="lesson-text">Counting objects (1-10)</span>                          
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla.">K.CC.1</span>                              
+                              <span rel="tooltip" class="lesson-tag" title="Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">K.CC.1</span>                              
+                          </span>
+                        </a>
+                      </li>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <!-- /.Main menu -->
+
+      <div class="st-pusher">
+        <div class="st-content">
+
+          <div class="st-content-inner">
+              <!-- HEADER (MOBILE) -->
+              <header class="l-header mobile-header visible-xs">
+                <nav class="navbar navbar-default">
+                  <div class="container-fluid">
+
+                    <div class="navbar-header">
+
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#profile-menu">
+                        <span class="icon-profile"></span>
+                      </button>
+
+                      <a class="navbar-brand" href="#">
+                        <img alt="Catapult Learning" src="img/logo-mobile.svg">
+                      </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="profile-menu">
+                      <ul class="nav navbar-nav">
+                        <li><a href="#">Analytics</a></li>
+                        <li><a href="#">Content management</a></li>
+                        <li><a href="#">User management</a></li>
+                        <li><a href="#">Logout</a></li>
+                      </ul>
+                    </div><!-- /.navbar-collapse -->
+
+                  </div><!-- /.container-fluid -->
+                </nav>
+              </header>
+              <!-- /HEADER (MOBILE) -->
+
+
+              <!-- HEADER    (DESKTOP) -->
+              <header class="l-header hidden-xs ha-header ha-header-rotateBack" id="menubar">
+                <div class="ha-header-perspective">
+                  <div class="ha-header-front">
+                    <nav id="nav" class="nav">
+                      <ul class="nav-list align-left">
+                        <li>
+                          <a class="navbar-logo" href="index.html">
+                            <img alt="Catapult Learning" src="img/logo.svg">
+                          </a>
+                        </li>
+                        <li class="divider">
+                          <span class="split"></span>
+                        </li>
+                        <li>Lesson Hub</li>
+                      </ul>
+
+
+                      <div class="header-message">
+                        <span class='glyphicon glyphicon-ok'></span>
+                        Changes saved!
+                      </div>
+
+                      <!-- Profile drop-down menu -->
+                      <ul class="dropdown nav-list align-right">
+                        <li>
+                          <a href="#" class="dropdown-toggle" id="profile-menu" data-toggle="dropdown" aria-expanded="true">Mary Smith<span class="icon-arrow-down"></span></a>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="profile-menu">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Analytics</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Content management</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">User management</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#" class="edit-toggle" aria-expanded="true"></a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <!-- Edit mode header -->
+                  <div class="ha-header-bottom">
+                    <nav id="nav2" class="nav">
+                      <ul class="nav-list align-left">
+                        <li><a class="new-hub" href="#">New Hub</a></li>
+                      </ul>
+
+                      <div class="saved header-message">
+                        <span class='glyphicon glyphicon-ok'></span>
+                        Changes saved!
+                      </div>
+
+                      <div class='pending header-message'>
+                        <span class="ion ion-load-c spin" style="font-size: 20px"></span>
+                        Changes pending...
+                      </div>
+
+                      <ul class="dropdown nav-list align-right">
+                        <li class="text">This page in not visible to users.</li>
+                        <li><a class="publish" href="#">PUBLISH</a></li>
+                        <li>
+                          <a href="#" class="settings-toggle" aria-expanded="true"></a>
+                        </li><li><a href="#" class="close-toggle" aria-expanded="true"><img alt="Close" src="img/@2x/close_off@2x.png" width="26px" height="25px"></a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </header>
+              <!-- /HEADER (DESKTOP) -->
+
+
+              <!-- GREEN HEADER -->
+              <nav id="sub-nav">
+                <div class="container-fluid no-pad">
+                  <div class="row">
+
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                      <!-- Lesson menu -->
+                      <ul class="lessons-nav">
+                        <li class="dropdown dropdown-custom" data-dropdown="dropdown">
+                          <div id="st-trigger-effects" class="column">
+                              <button data-effect="st-effect-4" aria-expanded="true" role="button"><span class="hamburger"><span></span></span></button>
+                              <label>3.NBT.A</label>
+                          </div>
+
+                        </li>
+                        <li class="divider hidden-xs"></li>
+                      </ul>
+                      <!-- /Lesson Menu -->
+                    </div>
+
+                    <div class="col-lg-8 col-md-6 col-xs-12 hidden-sm">
+                      <!-- Lesson description -->
+                      <div class="lesson-descr">
+                        <p class="active">Understand addition as putting together and adding to, and understand subtraction as taking apart and taking from</p>
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+                        <p class="">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                        <p class="">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.</p>
+                      </div>
+                      <!-- /Lesson description -->
+                    </div>
+
+
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 pull-right no-pad">
+                      <!-- Controls -->
+                      <ul class="controls hidden-xs pull-right" id="hub-sections-next-prev-controls">
+                        <li><a href="javascript:void(0)" class="left"><span class="icon-arrow-left"></span></a></li>
+                        <li><a href="javascript:void(0)" class="right"><span class="icon-arrow-right"></span></a></li>
+                      </ul>
+                      <!-- /Controls -->
+                    </div>
+
+
+                  </div>
+                </div>
+              </nav>
+              <!-- / GREEN HEADER -->
+
+              <!-- SECTION SELECTORS -->
+              <section>
+                <div class="l-main">
+                  <ul id="section-selectors" class="hidden-sm hidden-xs">
+                    <li><a href=".skills-section" class="active">Skill Groups</a></li>
+                    <li style="display:none"><a href=".pre-assesment" class="sem-btn">Add Pre-Assessment</a></li>
+                    <li><a href=".best-practices">Best Practices & Suggested Activities</a></li>
+                    <li><a href=".evidence-of-learning">Evidence of Learning</a></li>
+                  </ul>
+                </div>
+              </section>
+              <!-- / SECTION SELECTORS -->
+
+
+              <!-- SECTION SELECTORS (MOBILE) -->
+              <div class="section-selectors-collapsed visible-xs visible-sm">
+                <div class="select-container">
+                  <select class="form-control visible-xs visible-sm" id="section-selectors">
+                    <option><a href=".skills-section" class="active">Skill Groups</a></option>
+                    <option><a href=".pre-assesment">Pre-Assessment</a></option>
+                    <option><a href=".best-practices">Best Practices & Suggested Activities</a></option>
+                    <option><a href=".evidence-of-learning">Evidence of Learning</a></option>
+                  </select>
+                </div>
+              </div>
+              <!-- / SECTION SELECTORS (TABLETS & MOBILE) -->
+
+
+              <!-- HUB SECTIONS -->
+              <div id="hub-sections-row" class="hidden-sm">
+                <div class="skills-section animated active">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-4 col-xs-12 column-pre-requisite">
+                        <div class="skill pre-requisite">
+                          <span class="icon-pre-requisite"></span>
+                          <h3>PRE-REQUISITE SKILLS</h3>
+                          <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+                          <div class="skills-edit-menu">
+                            <div class="row"><a href="javascript:void(0)" data-skill="pre-requisite" class="sem-btn al-btn">Add Lesson</a></div>
+                            <div class="row"><a href="javascript:void(0)" data-skill="pre-requisite" class="sem-btn apt-btn">Add Performance Task</a></div>
+                          </div>
+                          <div class="grey-box">
+                            <h3>AchieveMath Level K <br>Lessons 1-12</h3>
+                            <button class="btn btn-success" type="button" onclick="location.href='http://lessonhub/lesson.html'" >VIEW LESSONS</button>
+                            <ul class="additional-links">
+                              <li><a href="">Standards Alignment</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-xs-12 column-current">
+                        <div class="skill current">
+                          <span class="icon-current"></span>
+                          <h3>CURRENT SKILLS</h3>
+                          <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+                          <div class="skills-edit-menu">
+                            <div class="row"><a href="javascript:void(0)" data-skill="current" class="sem-btn al-btn">Add Lesson</a></div>
+                            <div class="row"><a href="javascript:void(0)" data-skill="current" class="sem-btn apt-btn">Add Performance Task</a></div>
+                          </div>
+                          <div class="grey-box">
+                            <h3>AchieveMath Level K <br>Lessons 1-12</h3>
+                            <button type="button" onclick="location.href='http://lessonhub/lesson.html'" class="btn btn-success">VIEW LESSONS</button>
+
+                            <ul class="additional-links">
+                              <li>
+                                <a class="perfomance-task" href="">
+                                  <span>PERFOMANCE TASK</span>
+                                  Jelly Bean Fun
+                                </a>
+                              </li>
+                              <li>
+                                <a href="">
+                                  Standards Alignment
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col-xs-12 column-growth">
+                        <div class="skill growth">
+                          <span class="icon-growth"></span>
+                          <h3>GROWTH SKILLS</h3>
+                          <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+                          <div class="skills-edit-menu">
+                            <div class="row"><a href="javascript:void(0)" data-skill="growth" class="sem-btn al-btn">Add Lesson</a></div>
+                            <div class="row"><a href="javascript:void(0)" data-skill="growth" class="sem-btn apt-btn">Add Performance Task</a></div>
+                          </div>
+                          <div class="grey-box">
+                            <h3>AchieveMath Level K <br>Lessons 1-12</h3>
+                            <button type="button" onclick="location.href='http://lessonhub/lesson.html'" class="btn btn-success">VIEW LESSONS</button>
+
+                            <ul class="additional-links">
+                              <li>
+                                <a class="perfomance-task" href="">
+                                  <span>PERFOMANCE TASK</span>
+                                  Jelly Bean Fun
+                                </a>
+                              </li>
+                              <li>
+                                <a href="">
+                                  Standards Alignment
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pre-assesment animated">
+                </div>
+                <div class="best-practices animated"></div>
+                <div class="evidence-of-learning animated"></div>
+              </div>
+              <!-- / HUB SECTIONS -->
+
+              <!-- HUB SECTIONS (TABLETS)-->
+              <div class="hub-sections-tablets visible-sm">
+                <div class="container">
+                  <div class="skill pre-requisite">
+                    <div class="row">
+                      <div class="col-sm-2">
+                        <span class="icon-pre-requisite"></span>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="skill-container">
+                          <h3>PRE-REQUISITE SKILLS</h3>
+                          <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+
+                          <ul class="additional-links-tablets">
+                            <li><a href="">Perfomance Task</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">Standards Alignment</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <h3 class="title-secondary">AchieveMath Level K <br>Lessons 1-12</h3>
+                        <button class="btn btn-success" type="button" onclick="location.href='http://lessonhub/lesson.html'" >VIEW LESSONS</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="skill current">
+                    <div class="row">
+                      <div class="col-sm-2">
+                        <span class="icon-current"></span>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="skill-container">
+                          <h3>CURRENT SKILLS</h3>
+                          <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+
+                          <ul class="additional-links-tablets">
+                            <li><a href="">Perfomance Task</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">Standards Alignment</a></li>
+                          </ul>
+                        </div>
+
+                      </div>
+                      <div class="col-sm-4">
+                        <h3 class="title-secondary">AchieveMath Level K <br>Lessons 1-12</h3>
+                        <button class="btn btn-success" type="button" onclick="location.href='http://lessonhub/lesson.html'" >VIEW LESSONS</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="skill growth">
+                    <div class="row">
+                      <div class="col-sm-2">
+                        <span class="icon-growth"></span>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="skill-container">
+                          <h3>GROWTH SKILLS</h3>
+                          <p>Know number names and the count sequence; Count to tell the number of objects; Compare numbers</p>
+
+                          <ul class="additional-links-tablets">
+                            <li><a href="">Perfomance Task</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">Standards Alignment</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <h3 class="title-secondary">AchieveMath Level K <br>Lessons 1-12</h3>
+                        <button class="btn btn-success" type="button" onclick="location.href='http://lessonhub/lesson.html'" >VIEW LESSONS</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.container -->
+              </div>
+              <!-- / HUB SECTIONS (TABLETS) -->
+
+              <!-- ADD LESSONS PANEL -->
+              <div class="al-panel-wrapper">
+                <div class="al-panel-overlay"></div>
+                <div class="al-panel">
+                  <div class="al-panel-top">
+                    <div class="row">
+                      <div class="col-md-6 al-title">Add Lessons</div>
+                      <div class="col-md-6" style="text-align: right;"><a href="javascript:void(0)" class="al-close"><span class="glyphicon glyphicon-remove"></span></a></div>
+                    </div>
+                    <div class="hub-row">
+                      <a href="#" class="al-new-lesson">New Lessons</a>
+                    </div>
+                    <div class="hub-row">
+                      <select class="al-dropdown" onchange="this.blur()" style="float:left;">
+                        <option value="primary">Primary</option>
+                        <option value="middle">Middle</option>
+                        <option value="high">High</option>
+                      </select>
+                      <select class="al-dropdown" onchange="this.blur()" style="float:right;">
+                        <option>K-2</option><option>3-5</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="al-panel-bottom scrollbar-inner2">
+                    <div class="hub-row">
+                      <ul class="lessons-list">
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson1" value="1" checked="checked"><label for="lesson1"><span>1</span><span>Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson1" value="1" checked="checked"><label for="lesson1"><span>1</span><span>Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson1" value="1" checked="checked"><label for="lesson1"><span>1</span><span>Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson1" value="1" checked="checked"><label for="lesson1"><span>1</span><span>Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson1" value="1" checked="checked"><label for="lesson1"><span>1</span><span>Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson2" value="2" checked="checked"><label for="lesson2"><span>2</span><span>Read and write numbers 0-5 Read and write numbers 0-5 Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson3" value="1" checked="checked"><label for="lesson3"><span>1</span><span>Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson4" value="2" checked="checked"><label for="lesson4"><span>2</span><span>Read and write numbers 0-5 Read and write numbers 0-5 Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson5" value="1" checked="checked"><label for="lesson5"><span>1</span><span>Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson6" value="2" checked="checked"><label for="lesson6"><span>2</span><span>Read and write numbers 0-5 Read and write numbers 0-5 Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson7" value="1" checked="checked"><label for="lesson7"><span>1</span><span>Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="lesson8" value="2" checked="checked"><label for="lesson8"><span>2</span><span>Read and write numbers 0-5 Read and write numbers 0-5 Read and write numbers 0-5</span></label></div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / ADD LESSONS PANEL -->
+
+              <!-- ADD PERFORMANCE TASK PANEL -->
+              <div class="apt-panel-wrapper">
+                <div class="apt-panel-overlay"></div>
+                <div class="apt-panel">
+                  <div class="apt-panel-top">
+                    <div class="row">
+                      <div class="col-md-8 apt-title">Add Performance Tasks</div>
+                      <div class="col-md-4" style="text-align: right;"><a href="javascript:void(0)" class="apt-close"><span class="glyphicon glyphicon-remove"></span></a></div>
+                    </div>
+                    <div class="hub-row" style="padding-bottom: 40px;">
+                      <a href="#" class="apt-new-lesson">New Performance Task</a>
+                    </div>
+                  </div>
+                  <div class="apt-panel-bottom scrollbar-inner3">
+                    <div class="hub-row">
+                      <ul class="tasks-list">
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="task1" value="1" checked="checked"><label for="task1"><span>Adjusting Equations</label></span></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="task2" value="2"><label for="task2"><span>Basic Math Basic Math Basic Math Basic Math Basic Math Basic Math</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="task3" value="3" checked="checked"><label for="task3"><span>Dinosaur Breakdown Dinosaur Breakdown Dinosaur Breakdown Dinosaur Breakdown Dinosaur Breakdown</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="task4" value="1" checked="checked"><label for="task4"><span>Adjusting Equations</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="task5" value="2"><label for="task5"><span>Basic Math Basic Math Basic Math Basic Math Basic Math Basic Math</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="task6" value="3" checked="checked"><label for="task6"><span>Dinosaur Breakdown Dinosaur Breakdown Dinosaur Breakdown Dinosaur Breakdown Dinosaur Breakdown</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="task7" value="1" checked="checked"><label for="task7"><span>Adjusting Equations</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="task8" value="2"><label for="task8"><span>Basic Math Basic Math Basic Math Basic Math Basic Math Basic Math</span></label></div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="ckbox ckbox-primary"><input type="checkbox" id="task9" value="3" checked="checked"><label for="task9"><span>Dinosaur Breakdown Dinosaur Breakdown Dinosaur Breakdown Dinosaur Breakdown Dinosaur Breakdown</span></label></div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / ADD PERFORMANCE TASK PANEL -->
+
+            </div>
+
+              <!-- Non-semantic div for sticky footer. Don't delete! -->
+              <div class="root-footer"></div>
+
+              <!-- FOOTER -->
+              <footer class="l-footer hidden-xs hidden-sm">
+                <p>@2014 Catapult Learning • All Rights Reserved • Two Aquarium Drive • Camden, NJ 08103 • 800-841-8730</p>
+              </footer>
+
+              <!-- MOBILE FOOTER -->
+              <footer class="l-footer mobile-footer visible-xs visible-sm">
+                <p>@2014 Catapult Learning <br> All Rights Reserved <br> Two Aquarium Drive <br> Camden, NJ 08103 • 800-841-8730</p>
+              </footer>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- / MAIN-WRAPPER -->
+
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/vendor/bootstrap.js"></script>
+    <script src="js/vendor/bootstrap/collapse.js"></script>
+    <script src="js/vendor/classie.js"></script>
+    <script src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script src="js/vendor/waypoints.min.js"></script>
+
+    <script src="js/hub.js"></script>
+
+  </body>
+</html>

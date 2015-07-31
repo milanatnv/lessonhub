@@ -1,0 +1,14 @@
+<label> Enter your state </label>
+<div class="btn-group select-container">
+  <form {{action "selectSuggestedState" on="submit" target="view"}} >
+    {{view "StateInput" placeholder="Colorado" class="form-control"
+      valueBinding="controller.selectedState" action="selectSuggestedState"
+      targetObject=view}}
+  </form>
+
+  <ul class="dropdown-menu">
+    {{#each item in view.stateCandidates itemViewClass="stateItem"}}
+      <a href="#" {{action "selectState" item target="view.parentView"}}>{{item.name}}</a>
+    {{/each}}
+  </ul>
+</div>

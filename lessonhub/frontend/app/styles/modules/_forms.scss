@@ -1,0 +1,116 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Form styles.
+ * ----------------------------------------------------------------------------------------
+ */
+
+select {
+
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+
+
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 45px;
+	font-size: 16px;
+	line-height: $baseline;
+	color: $color-text;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid $color-hr;
+	border-radius: 6px;
+	box-shadow: none;
+
+    @include transition(border-color 0.15s ease);
+
+    &:focus {
+        border-color: $color-green;
+        outline: 0;
+        box-shadow: none;
+    }
+}
+
+
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+	cursor: not-allowed;
+	background-color: $color-subtle-bg;
+	color:$color-light-text;
+	border-color: $color-subtle-bg;
+	opacity: 1;
+
+
+	&:focus {
+		border-color: $color-subtle-bg;
+	}
+}
+
+
+/*Validation on Welcome page*/
+
+    #welcome-page {
+
+        .password-section {
+
+            .icon-checkmark {
+                font-size: 10px;
+                line-height: 25px;
+                font-weight: bold;
+                background: $color-green;
+                width: 25px;
+                height: 25px;
+                margin-top: 10px;
+                color: #FFFFFF;
+                border-radius: 50%;
+                text-align: center;
+                display: inline-block;
+                vertical-align: middle;
+
+            }
+
+            .icon-cross:before {
+                font-size: 10px;
+                line-height: 25px;
+                font-weight: bold;
+                background: $color-validation-error;
+                width: 25px;
+                height: 25px;
+                margin: 10px 5px 0 0;
+                color: #FFFFFF;
+                border-radius: 50%;
+                text-align: center;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+             .validate-error {
+                font-size: 16px;
+                color: $color-validation-error;
+                line-height: 50px;
+                vertical-align: top;
+            }
+
+            .validate-error span {
+                font-size: 16px;
+                line-height: 50px;
+                vertical-align: top;
+
+                @include mq ($until: tablet) {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+

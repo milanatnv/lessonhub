@@ -1,0 +1,49 @@
+{
+  "resources": [
+    {
+      "name": "Errors",
+      "examples": [
+        {
+          "description": "Error message for non-existent URL",
+          "link": "errors/error_message_for_non-existent_url.json",
+          "groups": "all"
+        },
+        {
+          "description": "Error message for non-existent record",
+          "link": "errors/error_message_for_non-existent_record.json",
+          "groups": "all"
+        }
+      ]
+    },
+    {
+      "name": "Lessons",
+      "examples": [
+        {
+          "description": "Listing all lessons",
+          "link": "lessons/listing_all_lessons.json",
+          "groups": "all"
+        },
+        {
+          "description": "Listing specific lesson",
+          "link": "lessons/listing_specific_lesson.json",
+          "groups": "all"
+        }
+      ]
+    },
+    {
+      "name": "Skills",
+      "examples": [
+        {
+          "description": "Listing all skills",
+          "link": "skills/listing_all_skills.json",
+          "groups": "all"
+        },
+        {
+          "description": "Listing specific skill",
+          "link": "skills/listing_specific_skill.json",
+          "groups": "all"
+        }
+      ]
+    }
+  ]
+}

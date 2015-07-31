@@ -1,0 +1,189 @@
+<!-- LOGIN -->
+<div id="overlay">
+  <div id="registration">
+    <a {{action "closeLoginModal" target="view"}} href="#" class="close">
+      <span class="icon-cross"></span>
+    </a>
+    <h2>Login</h2>
+    <p class="fieldset">
+      <label class="input-icon icon-mail" for="email-login"></label>
+      <input class="form-control" id="email-login" placeholder="Email">
+    </p>
+
+    <p class="fieldset">
+      <label class="input-icon icon-lock" for="password-login"></label>
+      <input class="form-control" id="password-login" placeholder="Password" type="password">
+    </p>
+
+    <button {{action "closeLoginModal" target="view"}} href="# "class="btn btn-success">Login</button>
+  </div>
+</div>
+<!-- END LOGIN -->
+
+<!-- HEADER	 -->
+<header class="l-header hidden-xs" id="menubar">
+  <nav id="nav">
+    <ul class="nav-list align-left">
+      <li>
+        <a class="navbar-logo" href="/">
+          <img alt="Catapult Learning" src="/assets/images/logo.svg">
+        </a>
+      </li>
+    </ul>
+
+    <ul class="nav-list align-right">
+      <li>
+        <a {{action "showLoginModal" target="view"}} href="#" class="rsvp">Login</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- MOBILE HEADER -->
+<header class="l-header mobile-header visible-xs">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+      <img alt="Catapult Learning" src="/assets/images/logo-mobile.svg">
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a {{action "showLoginModal" target="view"}} href="#" class="rsvp">Login</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+
+
+<!-- MAIN -->
+<section>
+  <div class="l-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="height-space1"></div>
+          <div class="height-space1"></div>
+          <div class="height-space1 visible-lg hidden-lg"></div>
+          <div class="welcome-section text-center">
+            <h1 class="animated fadeInDown">Hi {{model.firstName}}! Welcome to Lesson Hub.</h1>
+            <p class="animated fadeIn">Looks like it’s your first time here, so we just need a few things. <br />
+              Simply select your state and create a unique password for Lesson Hub access, <br />and you’re all set.</p>
+            <p class="small animated fadeIn">(This will not affect your other Catapult Learning passwords.)</p>
+
+            {{view "state-select" class="animated fadeIn states"}}
+
+          </div>
+          <div class="height-space1 hidden-sm"></div>
+          <div class="height-space1 hidden-sm"></div>
+          <div class="height-space1 hidden-sm"></div>
+          <!-- end welcome section -->
+
+          <div class="container password-section">
+            <div class="row">
+              <div class="col-lg-6 col-xs-12">
+                <div class="password-caption">
+                  <center><p>Create Password</p></center>
+                </div>
+              </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+              <form action="#" class="form-horizontal" id="login-form" role="form">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <div class="col-lg-6 col-xs-12">
+                      <input class="lh-input form-control" id="email-input" readonly="" {{bind-attr value="model.email"}}>
+                    </div>
+                  </div>
+
+                  <div class="form-group password-wrapper">
+                    <div class="col-lg-6 col-xs-12">
+                      {{view "password-input"
+                             classNames="lh-input form-control"
+                             id="password"
+                             placeholder="Password"
+                             type="password"
+                             value=password
+                             action='submit'}}
+                    </div>
+
+                    <div class="col-lg-6 col-xs-12">
+                      {{#if isPasswordBlurred}}
+                        {{#if isPasswordValid}}
+                          <span class="icon-checkmark"></span>
+                        {{else}}
+                        <span class="validate-error validate-error-password">
+                          <span class="icon-cross validate-close"></span>
+                          <span>Too short (six character minimum).</span>
+                        </span>
+                        {{/if}}
+                      {{/if}}
+                    </div>
+                  </div>
+
+                  <div class="form-group confirm-password-wrapper">
+                    <div class="col-lg-6 col-xs-12">
+                      {{view "password-input"
+                              classNames="lh-input form-control"
+                              id="password_confirmation"
+                              placeholder="Confirm Password"
+                              type="password"
+                              value=confirmation
+                              action='submit'}}
+                    </div>
+
+                    <div class="col-lg-6 col-xs-12">
+                      {{#if isPasswordConfirmationBlurred}}
+                        {{#if isConfirmationValid}}
+                          <span class="icon-checkmark"></span>
+                        {{else}}
+                          <span class="validate-error validate-error-confirm-password">
+                            <span class="icon-cross validate-close"></span>
+                            <span>Doesn't match password.</span>
+                          </span>
+                        {{/if}}
+                      {{/if}}
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-lg-6 col-xs-12">
+                      <center>
+                        <button {{bind-attr disabled=isInvalidRegistration}}
+                                {{action 'submit'}}
+                                type="button"
+                                class="btn btn-register btn-success">REGISTER</button>
+                      </center>
+                    </div>
+                  </div>
+                  <!-- end register button -->
+                </div>
+                <!-- end col-sm-12 -->
+              </form>
+            </div>
+            <!-- end row -->
+          </div>
+          <!-- end password-section -->
+        </div>
+      </div>
+    </div>
+    <!-- end container -->
+  </div> <!-- end l-main -->
+</section>
+
+<!-- Non-semantic div for sticky footer. Don't delete! -->
+<div class="root-footer"></div>
